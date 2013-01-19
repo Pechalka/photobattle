@@ -11,7 +11,7 @@ var UserShema = new Schema ({
 	email: String,
 	avatar_path: { type : String, default : '' },
 	rating: { type : Number, default : 0 },
-	type: { type : Number, default : 1 }
+	type: { type : String, default : 'amateur' }
 });
 
 db.Battle = new Schema({
@@ -36,11 +36,11 @@ var battle_types = {
 	2 : "duel" 
 };
 
-var user_type = {
-	0: "admin",
-	1: "amateur",
-	2: "professional"
-}
+// var user_type = {
+// 	0: "admin",
+// 	1: "amateur",
+// 	2: "professional"
+// }
 
 db.User = mongoose.model('User', UserShema);
 

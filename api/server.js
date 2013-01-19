@@ -40,7 +40,7 @@ app.get('/api/index', function(req, res){
 
 app.get('/api/users', 
   function (req, res) {
-    db.User.find({}, function(e, users){
+    db.User.find({ type : req.body.type }, function(e, users){
       res.json(users, 200);
     });
 });

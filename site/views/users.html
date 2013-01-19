@@ -1,3 +1,7 @@
+<a data-bind="click : set_professional, css : { 'active' : type() == 'professional' }" >Профисионалы</a>
+<a data-bind="click : set_amateur, css : { 'active' : type() == 'amateur' }">Новички</a>
+
+
 <ul data-bind="foreach : users"> 
     <li data-bind="text : name"></li>
 </ul>
