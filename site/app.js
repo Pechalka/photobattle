@@ -19,6 +19,10 @@ define(["knockout", "jquery",
         	app.content.render("index", "/api/index");     	
         });
 
+        this.get('#Upload', function () {
+            app.content.render("upload");   
+        });
+
 		this.get('', function () {			
         	window.location = '#Index';
         });
