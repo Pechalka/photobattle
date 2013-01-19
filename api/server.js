@@ -12,13 +12,19 @@ app.use(express.bodyParser());
 app.get('/api/index', function(req, res){
 
 var result = {
-top_users : [
-{ name : 'test1', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-{ name : 'test2', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-{ name : 'test3', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-{ name : 'test4', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-{ name : 'test5', nick : 'test2', avatar_path : 'test.jpg', _id : '' }
-]
+    top_users : [
+        { name : 'test1', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+        { name : 'test2', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+        { name : 'test3', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+        { name : 'test4', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+        { name : 'test5', nick : 'test2', avatar_path : 'test.jpg', _id : '' }
+    ],
+    top_images : [
+        "image1.jpg",
+        "image2.jpg",
+        "image3.jpg",
+        "image4.jpg",        
+    ]
 };
 
   res.json(200, result);
