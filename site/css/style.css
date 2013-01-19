@@ -68,6 +68,16 @@ a:hover{
 ul li{
 	list-style-type: none;
 }
+h1{
+	font-size:2em;
+	color:#444444;
+	padding:20px 40px 40px;
+}
+h2{
+	color:#444444;
+	font-size:1.75em;
+	margin-bottom:20px;
+}
 h3{
 	font-size:1.5em;
 	line-height:1.3em;
@@ -82,11 +92,7 @@ h4{
 	color:#534d4d;
 	padding-bottom:30px;	
 }
-h2{
-	color:#444444;
-	font-size:1.75em;
-	margin-bottom:20px;
-}
+
 b, strong{
 	font-weight:bold;
 }
@@ -108,6 +114,7 @@ body{
 	box-shadow: 0px 0px 5px #cacaca;
 	overflow:hidden;
 }
+
 .content{
 	overflow:hidden;
 }
@@ -245,6 +252,9 @@ nav#navigation ul li a.active{
 .row{
 	width:920px;
 }
+.inner_wrapper .row{
+	padding-left:40px;
+}
 .half_col{
 	width:425px;
 	float:left;
@@ -305,7 +315,7 @@ nav#navigation ul li a.active{
 	z-index:1;
 }
 .competition_row{
-	padding:25px 0px 20px 45px;
+	padding:25px 0px 20px;
 	overflow:hidden;
 }
 .competition_row a{
@@ -396,6 +406,70 @@ a.critic_link{
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	padding:45px 45px 48px 38px;
+}
+.form.register_form{
+	width:300px;
+	margin:0 auto;
+}
+.form_row{
+	padding-bottom:15px;
+}
+.form_row:after{
+	display:block;
+	clear:both;
+	content:"";
+}
+.form_row label{
+	display:block;
+	font-size:1.25em;
+	padding-bottom:5px;
+}
+input[type="text"],input[type="email"],input[type="password"]{
+	display:block;
+	width:300px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ececec;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding:0px 10px;
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus{
+	border-color:#666666;
+}
+input[type="radio"]+label{
+	display:inline;
+	cursor:pointer;
+	padding-right:10px;
+}
+input[type="submit"]{
+	height:38px;
+	display:block;
+	float:right;
+	padding:0px 15px;
+	border:0px;
+	font-family: 'Open Sans', sans-serif;
+	line-height:38px;
+	color:#010101;
+	text-align:center;
+	font-size:1.167em;
+	text-decoration:none;
+	background: #ffd741;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffd741), to(#ffc22b));
+	background: -webkit-linear-gradient(#ffd741, #ffc22b);
+	background: -moz-linear-gradient(#ffd741, #ffc22b);
+	background: -ms-linear-gradient(#ffd741, #ffc22b);
+	background: -o-linear-gradient(#ffd741, #ffc22b);
+	background: linear-gradient(#ffd741, #ffc22b);
+}
+input[type="submit"]:hover{
+	background: #ffc22b;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffc22b), to(#ffd741));
+	background: -webkit-linear-gradient(#ffc22b, #ffd741);
+	background: -moz-linear-gradient(#ffc22b, #ffd741);
+	background: -ms-linear-gradient(#ffc22b, #ffd741);
+	background: -o-linear-gradient(#ffc22b, #ffd741);
+	background: linear-gradient(#ffc22b, #ffd741);
 }
 footer#footer{
 	margin:38px 55px 0px 112px;

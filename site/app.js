@@ -25,9 +25,7 @@ define(["knockout", "jquery",
         });
 
         this.get('#NewUser', function () {
-            app.content.render("new_user", null, function(new_user) {
-                new_user.init_uploader();
-            });   
+            app.content.render("new_user");   
         });
 
 		this.get('', function () {	

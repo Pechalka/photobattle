@@ -164,3 +164,22 @@ app.listen(8080, function(){
 //     <span data-bind="text : photo_name"></span>
 //     <span data-bind="text : user_name"></span>
 // </div> #}
+
+
+// <h1>Регистрация</h1>
+
+// <div data-bind="with : user">
+//   <span>Имя:</span>
+//     <input type="text" data-bind="value : name"/></br>
+//     <span>Ник:</span>
+//     <input type="text" data-bind="value : nick"/></br>
+//     <span>Емэйл:</span>
+//     <input type="text" data-bind="value : email"/></br>
+    
+//     <input type="radio" name="group1" value="amateur" data-bind="checked : type"> Любитель</br>
+//     <input type="radio" name="group1" value="professional" data-bind="checked : type"> Профи</br> 
+// </br>
+    
+// </div>
+
+// <input type="button" value="save" data-bind="click : save" />
