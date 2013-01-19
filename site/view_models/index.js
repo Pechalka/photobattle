@@ -3,6 +3,7 @@ define(["knockout", "jquery"],
         return function(model){
             var self = this;
 
+            
             self.top_users = model.top_users;
 
         };

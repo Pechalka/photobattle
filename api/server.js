@@ -21,7 +21,7 @@ top_users : [
 ]
 };
 
-  res.json(result);
+  res.json(200, result);
 });
 
 app.listen(8080, function(){
