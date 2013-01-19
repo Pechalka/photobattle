@@ -50,6 +50,16 @@ app.get('/api/users',
     });
 });
 
+app.get('/api/users_by_rating', 
+  function (req, res) {
+    db.User.find()
+    .sort('-rating')
+    .exec(
+      function(e, users){
+        res.json(users, 200);
+    });
+});
+
 app.get('api/top_users',
   function (req, res) {
     db.User.find({ type : req.body.type }, function(e, users){
@@ -60,7 +70,6 @@ app.get('api/top_users',
 
 app.post('/api/user', 
   function (req, res) {
-    console.log(req.body);
     var user = new db.User(req.body).save();
     res.json(user, 200);
   });
