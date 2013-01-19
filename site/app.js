@@ -13,17 +13,14 @@ define(["knockout", "jquery",
 	return Sammy(function(){
 		var app = this;
 
-		app.menu = ViewModelContainer("widgets/menu", '/api/menu');
 		app.content = ViewModelContainer();
 
-        app.rating = ViewModelContainer("widgets/rating");
-
         this.get('#Index', function () {
-        	app.content.render("index");     	
+        	app.content.render("index", "/api/index");     	
         });
 
 		this.get('', function () {			
-        	window.location = '#Users';
+        	window.location = '#Index';
         });
 
 

@@ -9,28 +9,19 @@ app.use(express.bodyParser());
 
 
 
-app.post('/api/users', function(req, res){
-    console.log(req.body);
+app.get('/api/index', function(req, res){
 
-    res.json(
-        {
-         Data : [
-          { FirstName : 'Vasa', LastName : 'Ivanov', Gender : true, Age : 15},
-          { FirstName : 'Vasa9', LastName : 'Ivanov', Gender : true, Age : 15}
-         ],
-         Paging : {
-          PageNumber : req.body.pageNumber, 
-          TotalPagesCount : 10
-         }
-        }
-    );
-});
+var result = {
+top_users : [
+{ name : 'test1', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+{ name : 'test2', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+{ name : 'test3', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+{ name : 'test4', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
+{ name : 'test5', nick : 'test2', avatar_path : 'test.jpg', _id : '' }
+]
+};
 
-app.get('/api/menu', function(req, res){
-  res.json([
-        { text : 'Users', url :'#Users'}, 
-        { text : 'Photos', url :'#Photos'}
-      ]);
+  res.json(result);
 });
 
 app.listen(8080, function(){

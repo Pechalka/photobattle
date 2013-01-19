@@ -3,9 +3,7 @@ define(["knockout", "jquery"],
         return function(model){
             var self = this;
 
-            self.active = ko.observable("#Users");
-
-            self.items = model;
+            self.top_users = model.top_users;
 
         };
     }
