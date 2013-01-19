@@ -17,6 +17,9 @@ define(["knockout", "jquery",
 		app.content = ViewModelContainer();
         app.user_menu = ViewModelContainer('user_menu');
 
+        app.current_user = null;
+
+
 
         $(app).on('login', function(e, userName){
             app.user_menu.action(function(menu){
@@ -53,6 +56,11 @@ define(["knockout", "jquery",
                     window.location = '#Index';
                     $.colorbox.close();
                     $(app).trigger('login', 'vasa');
+                    $.get('/api/login', { login : self.login, password : self.password}, function(result){
+                        if (result.success)
+                            $(app).trigger('login', 'vasa');
+                                   
+                    });
                 }
             };
 
@@ -62,6 +70,8 @@ define(["knockout", "jquery",
         this.get('#User', function(){
             app.content(null);
         });
+
+
 
 		this.get('', function () {	
         	window.location = '#Index';

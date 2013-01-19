@@ -43,6 +43,8 @@ app.get('/api/index', function(req, res){
 });
 // user
 
+
+
 app.get('/api/users', 
   function (req, res) {
     db.User.find({}, function(e, users){

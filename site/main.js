@@ -43,6 +43,8 @@ require([
 			window.app = App;
 			ko.applyBindings(app);
 
+ //           $(app).trigger('login', 'vasa');
+
 			app.run();
 		});
 
