@@ -18,7 +18,7 @@ define(["knockout", "jquery", "qq"],
             }
 
              ko.computed(function(){
-                $.get("/api/users_pager", { page : self.page() }, function(res) {
+                $.get("/api/users_pager", { page : self.page(), type : self.type() }, function(res) {
                     self.pages([]);
                     for (var i=1, j=res.total_pages; i <= j; i++) {
                         self.pages.push(i);

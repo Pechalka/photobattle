@@ -6,10 +6,11 @@ var express = require('express')
   , db = require('./database').db
   , photo_processing = require('./routes/photo_processing');
 
-
-
-app.use(express.static(__dirname + "/../site/"));
 app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(express.cookieParser()); 
+app.use(express.static(__dirname + "/../site/"));
+
 
 
 
@@ -63,15 +64,14 @@ app.get('/api/users',
 
 app.get('/api/users_pager', 
   function (req, res) {
-    console.log(req.params.page);
-    var p = req.params.page || 1;
-    var type = req.params.type || 0;
-    db.User.paginate({},p, 10,
+    var qpage = req.query.page || 1;
+    var qtype = req.query.type || "amateur";
+    db.User.paginate({type : qtype}, qpage, 10,
       function(e, pages_count, items) {
         res.json({
           users : items,
           total_pages : pages_count,
-          page : p
+          page : qpage
         },200)
       });
 });
