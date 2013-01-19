@@ -3,7 +3,8 @@ var express = require('express')
   , path = require('path')
   , passport = require('passport')
   , LocalStrategy = require('passport-local').Strategy
-  , db = require('./database').db;
+  , db = require('./database').db
+  , photo_processing = require('./routes/photo_processing');
 
 app.use(express.static(__dirname + "/../site/"));
 app.use(express.bodyParser());
@@ -39,6 +40,13 @@ var result = {
 
   res.json(200, result);
 });
+
+
+// photo processing
+
+app.post('/api/upload/photo', 
+  photo_processing.uploadPhoto
+);
 
 app.listen(8080, function(){
   console.log("Express server listening on port %d", '8080');
