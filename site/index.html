@@ -84,10 +84,10 @@
 					</ul>
 				</nav>
 				<div class="enter_block">
-					<ul>
-						<li><a href="#Login">Войти</a></li>
-						<li><a href="#NewUser">Зарегестрироваться</a></li>
-					</ul>
+					<!-- ko with : user_menu -->			
+					<!-- ko template:{ html: html, data : data} -->
+					<!-- /ko -->
+					<!-- /ko -->
 				</div>
 			</header>
  <!-- ko with : content -->			

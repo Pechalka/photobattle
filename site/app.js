@@ -15,9 +15,16 @@ define(["knockout", "jquery",
 		var app = this;
 
 		app.content = ViewModelContainer();
+        app.user_menu = ViewModelContainer('user_menu');
+
+
+        $(app).on('login', function(e, userName){
+            app.user_menu.action(function(menu){
+                menu.login(userName);
+            });
+        });
 
         this.get('#Index', function () {
-
         	app.content.render("index", "/api/index");     	
         });
 
@@ -45,10 +52,15 @@ define(["knockout", "jquery",
                 self.login_click = function(){
                     window.location = '#Index';
                     $.colorbox.close();
+                    $(app).trigger('login', 'vasa');
                 }
             };
 
             ko.applyBindings(new loginVM(), $('#test')[0]);
+        });
+
+        this.get('#User', function(){
+            app.content(null);
         });
 
 		this.get('', function () {	
