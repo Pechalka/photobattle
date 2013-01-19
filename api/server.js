@@ -56,15 +56,18 @@ app.get('/api/users_by_rating',
     .sort('-rating')
     .exec(
       function(e, users){
-        console.log(users); 
         res.json(users, 200);
     });
 });
 
-app.get('api/top_users',
+app.get('/api/top_users',
   function (req, res) {
-    db.User.find({ type : req.body.type }, function(e, users){
-      res.json(users, 200);
+    db.User.find({})
+    .sort('-rating')
+    .limit(10)
+    .exec(
+      function(e, users){
+        res.json(users, 200);
     });
 });
 
