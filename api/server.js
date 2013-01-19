@@ -43,7 +43,15 @@ app.get('/api/index', function(req, res){
 });
 // user
 
-
+app.get('/api/login', function(req, res){
+  
+  db.User.findOne({ nick : req.params.login, password : req.params.password}, function(e, user){
+      console.log(user);
+      res.json({
+        success : user
+      }, 200);
+  });
+});
 
 app.get('/api/users', 
   function (req, res) {
