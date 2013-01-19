@@ -1,8 +1,8 @@
 var express = require('express')
   , app = express()
   , path = require('path')
-  , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy
+ // , passport = require('passport')
+ // , LocalStrategy = require('passport-local').Strategy
   , db = require('./database').db
   , photo_processing = require('./routes/photo_processing');
 

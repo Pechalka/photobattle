@@ -4,7 +4,6 @@ define(["knockout", "jquery", "qq"],
             var self = this;
 
             self.init = function() {
-                var progress_div = $('.progress');
                 new qq.FileUploader({
                     element: $('#photo-upload')[0],
                     action: '/api/upload/photo',
@@ -19,15 +18,16 @@ define(["knockout", "jquery", "qq"],
                         // $bar.width(percent);
                     },
                     onComplete: function(a, b, r){
+                        //alert('sdf');
                         // self.collection.create({ src: r.src, name : r.name });
-                        progress_div.hide();
+                        $('.qq-upload-list').hide();
                         // $success.show();
                         // $alert.delay(1200).fadeOut(500);
                     },
                     template: '<div class="qq-uploader">' +
                                     '<pre class="qq-upload-drop-area"><span>{dragText}</span></pre>' +
                                     '<div class="qq-upload-button btn btn-primary" style="width: auto;">upload</div>' +
-                                    '<ul class="qq-upload-success" style="margin-top: 10px; text-align: center;"></ul>' +
+                                    '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
                                     '</div>'
 
                 });
