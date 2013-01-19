@@ -1,0 +1,5 @@
+<ul class="nav nav-pills" data-bind="foreach : items">
+  <li data-bind="css : { 'active' : url == $parent.active() }">
+    <a data-bind="text:text, attr : { href : url}"></a>
+  </li>
+</ul>
