@@ -45,17 +45,18 @@ app.get('/api/index', function(req, res){
 
 app.get('/api/users', 
   function (req, res) {
-    db.User.find({ type : req.body.type }, function(e, users){
+    db.User.find({}, function(e, users){
       res.json(users, 200);
     });
 });
 
 app.get('/api/users_by_rating', 
   function (req, res) {
-    db.User.find()
+    db.User.find({})
     .sort('-rating')
     .exec(
       function(e, users){
+        console.log(users); 
         res.json(users, 200);
     });
 });
