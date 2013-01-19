@@ -12,14 +12,15 @@ require.config({
 
         "stringTemplateEngine": "libs/stringTemplateEngine",
         "ViewModelContainer" : "libs/ViewModelContainer",
-        "Grid" : "libs/SimpleGrid"
-        
+        "Grid" : "libs/SimpleGrid",
+
+        "colorbox" : "vendor/colorbox/jquery.colorbox-min"
     },
     shim: {
         "ko.mapping" : ["knockout"],
         "stringTemplateEngine": ["knockout"],
-        "bootstrap" : ["jquery"]
-       
+        "bootstrap" : ["jquery"],
+       "colorbox" : ["jquery"]
     }
 });
 
