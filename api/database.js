@@ -32,8 +32,10 @@ mongoose.connect('mongodb://localhost/photobattle');
 
 var UserSchema = new Schema ({
 	name: String,
+	password: String,
 	nick: String,
 	email: String,
+	description: { type : String, default : '' },
 	avatar_path: { type : String, default : '' },
 	rating: { type : Number, default : 0 },
 	type: { type : String, default : 'amateur' }
