@@ -1,0 +1,15 @@
+coverage.html
+.DS_Store
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.swp
+*.swo
+node_modules/
+.idea
+npm-debug.log
+site/content/uploads/

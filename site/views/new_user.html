@@ -1,0 +1,13 @@
+<h1>Регистрация</h1>
+
+<div data-bind="with : user">
+    <input type="text" data-bind="value : name"/>
+    <input type="text" data-bind="value : nick"/>
+    <input type="text" data-bind="value : email"/>
+
+
+    <img  data-bind="attr: { src : avatar }" style="width : 150px; higth : 150px">
+    <div id="photo-upload" >Upload Photo </div>
+</div>
+
+<input type="button" value="save" data-bind="click : save" />
