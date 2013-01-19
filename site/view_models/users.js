@@ -17,7 +17,7 @@ define(["knockout", "jquery", "qq"],
             }
 
              ko.computed(function(){
-                $.get("/api/users", { type : self.type() , page : self.page() }, self.users);
+                $.get("/api/users_by_rating", { type : self.type() , page : self.page() }, self.users);
              });   
 
             

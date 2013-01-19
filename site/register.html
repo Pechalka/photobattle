@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <!--[if lt IE 9]>   <script src="/js/html5.js"></script><![endif]-->
-    <title>Конкурсы</title>
+    <title>Регистрация</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/custom.js"></script>
@@ -86,91 +86,41 @@
 				<div class="enter_block">
 					<ul>
 						<li><a href="#">Войти</a></li>
-						<li><a href="#">Зарегестрироваться</a></li>
 					</ul>
 				</div>
 			</header>
-			<div class="row">
-				<div class="competition_row">
-					<h2><b>открытые</b> конкурсы</h2>
-					<div class="list_competitions">
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>пейзаж</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>социальная</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>портрет</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>фантазия</span>
-						</a>
+			<h1>Регистрация</h1>
+			<form class="form register_form">
+				<fieldset>
+					<div class="form_row">
+						<label>Имя</label>
+						<input type="text"/>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="competition_row">
-					<h2><b>будующие</b> конкурсы</h2>
-					<div class="list_competitions">
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>пейзаж</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>социальная</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>портрет</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>фантазия</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>социальная</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>портрет</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>фантазия</span>
-						</a>
+					<div class="form_row">
+						<label>Nickname</label>
+						<input type="text"/>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="competition_row">
-					<h2><b>архив завершенных</b> конкурсов</h2>
-					<div class="list_competitions">
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>пейзаж</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>социальная</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs.jpg" alt=""/>
-							<span>портрет</span>
-						</a>
-						<a href="#">
-							<img src="img/konkurs_2.jpg" alt=""/>
-							<span>фантазия</span>
-						</a>
+					<div class="form_row">
+						<label>E-mail</label>
+						<input type="email"/>
 					</div>
-				</div>
-			</div>
+					<div class="form_row">
+						<label>Пароль</label>
+						<input type="password"/>
+					</div>
+					<div class="form_row">
+						<label>Повторите пароль</label>
+						<input type="password"/>
+					</div>
+					<div class="form_row">
+						<input type="radio" name="role" id="role_1" tabindex="1" checked="checked"/> <label for="role_1">Любитель</label>
+						<input type="radio" name="role" id="role_2" tabindex="2" /> <label for="role_2">Профессионал</label>
+					</div>
+					<div class="form_row">
+						<input type="submit" value="Зарегестрироваться">
+					</div>
+				</fieldset>
+			</form>
 		</section>
 	</div>
 	<footer id="footer">
