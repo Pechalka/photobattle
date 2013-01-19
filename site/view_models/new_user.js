@@ -25,6 +25,7 @@ define(["knockout", "jquery", "qq"],
                     name : '',
                     nick : '',
                     email : '',
+                    type : ko.observable('amateur'),
                     avatar : ko.observable('')
                 };
 
