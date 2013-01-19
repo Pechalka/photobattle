@@ -1,9 +1,10 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+	Schema = mongoose.Schema,
+	db = {};
+
 mongoose.connect('mongodb://localhost/photobattle');
-var Schema = mongoose.Schema;
 
-
-var User = new Schema ({
+db.User = new Schema ({
 	name: String,
 	nick: String,
 	avatar_path: String,
@@ -11,7 +12,7 @@ var User = new Schema ({
 	type:
 });
 
-var Battle = new Schema({
+db.Battle = new Schema({
 	title: String,
 	image_path: String,
 	description: String,
@@ -21,12 +22,11 @@ var Battle = new Schema({
 	prize: Number
 });
 
-var Picture = new Schema({
+db.Picture = new Schema({
 	title: String,
 	image_path: String,
 	battle_id: { type: ObjectId, ref: 'Battle' }
 })
-
 
 var battle_types = {
 	0 : "general",
@@ -39,3 +39,6 @@ var user_type = {
 	1: "amateur",
 	2: "professional"
 }
+
+exports.db = db;
+
