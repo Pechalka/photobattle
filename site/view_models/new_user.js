@@ -8,8 +8,8 @@ define(["knockout", "jquery", "qq"],
                     element: $('#photo-upload')[0],
                     action: '/api/upload/photo',
                     onComplete: function(a, b, r){
-                          $('.qq-upload-list').hide();
-                          self.user.avatar('content/uploads/photos/1358614721753.jpg')
+                          self.user.avatar('content/uploads/photos/1358614721753.jpg');
+                        
                     },
                     template: '<div class="qq-uploader">' +
                                     '<pre class="qq-upload-drop-area"><span>{dragText}</span></pre>' +
@@ -29,9 +29,8 @@ define(["knockout", "jquery", "qq"],
                 };
 
             self.save = function() {
-                debugger
                 $.post("/api/user", self.user, function() {
-                    alert('ok')
+                    window.location = '#Index';
                 });
             }
            

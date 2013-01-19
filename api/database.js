@@ -5,13 +5,13 @@ var mongoose = require('mongoose')
 
 mongoose.connect('mongodb://localhost/photobattle');
 
-db.User = new Schema ({
+var UserShema = new Schema ({
 	name: String,
 	nick: String,
 	email: String,
-	avatar_path: String,
-	rating: Number,
-	type: Number
+	avatar_path: { type : String, default : '' },
+	rating: { type : Number, default : 0 },
+	type: { type : Number, default : 1 }
 });
 
 db.Battle = new Schema({
@@ -42,5 +42,8 @@ var user_type = {
 	2: "professional"
 }
 
+db.User = mongoose.model('User', UserShema);
+
 exports.db = db;
+
 

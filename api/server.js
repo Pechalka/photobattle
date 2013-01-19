@@ -4,8 +4,7 @@ var express = require('express')
  // , passport = require('passport')
  // , LocalStrategy = require('passport-local').Strategy
   , db = require('./database').db
-  , photo_processing = require('./routes/photo_processing')
-  , user_model = require('./models.user');
+  , photo_processing = require('./routes/photo_processing');
 
 
 
@@ -15,38 +14,36 @@ app.use(express.bodyParser());
 
 
 app.get('/api/index', function(req, res){
-
-var result = {
-    top_users : [
-        { name : 'test1', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-        { name : 'test2', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-        { name : 'test3', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-        { name : 'test4', nick : 'test2', avatar_path : 'test.jpg', _id : '' },
-        { name : 'test5', nick : 'test2', avatar_path : 'test.jpg', _id : '' }
-    ],
-    top_images : [
-        "image1.jpg",
-        "image2.jpg",
-        "image3.jpg",
-        "image4.jpg",        
-    ],
-    current_batle : {
-                image_path : 'test.jpg',
-                name : 'лучшй пейзаж'
-            },
-            winner :  {
-                photo_path : 'test.jpg',
-                photo_name : 'метрополитен',
-                user_name : 'Иван Иваныч'
-            }
-};
-
-  res.json(200, result);
+  db.User.find({}, function(e, users){
+    var result = {
+        top_users : users,
+        top_images : [
+            "image1.jpg",
+            "image2.jpg",
+            "image3.jpg",
+            "image4.jpg",        
+        ],
+        current_batle : {
+                    image_path : 'test.jpg',
+                    name : 'лучшй пейзаж'
+                },
+                winner :  {
+                    photo_path : 'test.jpg',
+                    photo_name : 'метрополитен',
+                    user_name : 'Иван Иваныч'
+                }
+    };
+    res.json(200, result);
+  });
 });
 // user
 
 app.post('/api/user', 
-  user_model.add_user);
+  function (req, res) {
+    console.log(req.body);
+    var user = new db.User(req.body).save();
+    res.json(user, 200);
+  });
 
 // photo processing
 
