@@ -1,7 +1,8 @@
-var express = require('express');
-var mongoose = require('mongoose');
-
-var app = express();
+var express = require('express')
+  , app = express()
+  , path = require('path')
+  , passport = require('passport')
+  , LocalStrategy = require('passport-local').Strategy;
 
 app.use(express.static(__dirname + "/../site/"));
 app.use(express.bodyParser());
