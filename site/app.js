@@ -19,10 +19,8 @@ define(["knockout", "jquery",
         	app.content.render("index", "/api/index");     	
         });
 
-        this.get('#Upload', function () {
-            app.content.render("upload", null, function(upload) {
-                upload.init();
-            });   
+        this.get('#Users', function () {
+            app.content.render("users");   
         });
 
         this.get('#NewUser', function () {

@@ -38,6 +38,13 @@ app.get('/api/index', function(req, res){
 });
 // user
 
+app.get('/api/users', 
+  function (req, res) {
+    db.User.find({}, function(e, users){
+      res.json(users, 200);
+    });
+});
+
 app.post('/api/user', 
   function (req, res) {
     console.log(req.body);
