@@ -36,7 +36,7 @@ var UserSchema = new Schema ({
 	nick: String,
 	email: String,
 	description: { type : String, default : '' },
-	avatar_path: { type : String, default : '' },
+	avatar_path: { type : String, default : 'img/big_ava.jpg' },
 	rating: { type : Number, default : 0 },
 	type: { type : String, default : 'amateur' }
 });

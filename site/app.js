@@ -69,11 +69,10 @@ define(["knockout", "jquery",
             ko.applyBindings(new loginVM(), $('#test')[0]);
         });
 
+
         this.get('#User/:id', function(){
-            app.content(null);
+            app.content.render('user_details', '/api/user/' + this.params["id"]);
         });
-
-
 
 		this.get('', function () {	
         	window.location = '#Index';

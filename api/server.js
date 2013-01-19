@@ -42,6 +42,14 @@ app.get('/api/index', function(req, res){
     res.json(200, result);
   });
 });
+
+app.get('/api/user/:id', function(req, res){
+  console.log(req.params);
+  db.User.findById(req.params.id, function(e, user){
+      res.json(user, 200);
+  });
+});
+
 // user
 
 app.post('/api/login', function(req, res){
