@@ -1,13 +1,16 @@
 <h1>Регистрация</h1>
 
 <div data-bind="with : user">
-    <input type="text" data-bind="value : name"/>
-    <input type="text" data-bind="value : nick"/>
-    <input type="text" data-bind="value : email"/>
-
-
-    <img  data-bind="attr: { src : avatar }" style="width : 150px; higth : 150px">
-    <div id="photo-upload" >Upload Photo </div>
+	<span>Имя:</span>
+    <input type="text" data-bind="value : name"/></br>
+    <span>Ник:</span>
+    <input type="text" data-bind="value : nick"/></br>
+    <span>Емэйл:</span>
+    <input type="text" data-bind="value : email"/></br>
+    <input type="radio" name="group1" value="lub" checked> Любитель</br>
+<input type="radio" name="group1" value="prof" > Профи</br> 
+</br>
+    
 </div>
 
 <input type="button" value="save" data-bind="click : save" />
