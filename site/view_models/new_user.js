@@ -9,6 +9,7 @@ define(["knockout", "jquery", "qq"],
                     email : '',
                     password : '',
                     repeat_password : '',
+                    description : '',
                     type : ko.observable('amateur')
                 };
 
@@ -16,6 +17,8 @@ define(["knockout", "jquery", "qq"],
                 $.post("/api/user", self.user, function() {
                     window.location = '#Login';
                 });
+
+                return false;
             }
            
         };

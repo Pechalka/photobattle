@@ -21,9 +21,9 @@ define(["knockout", "jquery",
 
 
 
-        $(app).on('login', function(e, userName){
+        $(app).on('login', function(e, user){
             app.user_menu.action(function(menu){
-                menu.login(userName);
+                menu.login(user);
             });
         });
 
@@ -34,6 +34,8 @@ define(["knockout", "jquery",
         this.get('#Users', function () {
             app.content.render("users");   
         });
+
+
 
         this.get('#NewUser', function () {
             app.content.render("new_user");   
@@ -56,9 +58,9 @@ define(["knockout", "jquery",
                     window.location = '#Index';
                     $.colorbox.close();
                     $(app).trigger('login', 'vasa');
-                    $.get('/api/login', { login : self.login, password : self.password}, function(result){
+                    $.post('/api/login', { login : self.login, password : self.password}, function(result){
                         if (result.success)
-                            $(app).trigger('login', 'vasa');
+                            $(app).trigger('login', result.user);
                                    
                     });
                 }
@@ -67,7 +69,7 @@ define(["knockout", "jquery",
             ko.applyBindings(new loginVM(), $('#test')[0]);
         });
 
-        this.get('#User', function(){
+        this.get('#User/:id', function(){
             app.content(null);
         });
 

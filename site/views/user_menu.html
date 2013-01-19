@@ -6,7 +6,7 @@
 <!-- /ko --!>
 <!-- ko if: user_name() != '' --!>    
 <ul>
-    <li><a href="#User" data-bind="text : 'Здравствуйте, ' + user_name()"></a></li>
+    <li><a data-bind="text : 'Здравствуйте, ' + user_name(), attr : { href : '#User/' + user_id() }"></a></li>
     <li><a href='javascript:void(0)' data-bind="click : logout" >Выйти</a></li>    
 </ul>
 <!-- /ko --!>

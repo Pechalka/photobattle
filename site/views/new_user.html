@@ -1,5 +1,5 @@
 <h1>Регистрация</h1>
-            <form class="form register_form">
+            <form class="form register_form" data-bind="submit : save" method="POST">
                 <fieldset>
                      <!-- ko with : user --> 
                     <div class="form_row">
@@ -27,12 +27,12 @@
                         <input type="password" data-bind="value : repeat_password"/>
                     </div>
                     <div class="form_row">
-                        <input type="radio" name="role" id="role_1" value="amateur" data-bind="checked : type" tabindex="1" checked="checked"/> <label for="role_1">Любитель</label>
-                        <input type="radio" name="role" id="role_2" value="professional" data-bind="checked : type" tabindex="2" /> <label for="role_2">Профессионал</label>
+                        <input type="radio" name="role" id="role_1" value="amateur" data-bind="checked : type"  /> <label for="role_1">Любитель</label>
+                        <input type="radio" name="role" id="role_2" value="professional" data-bind="checked : type"  /> <label for="role_2">Профессионал</label>
                     </div>
                     <!-- /ko -->
                     <div class="form_row">
-                        <input type="submit" value="Зарегестрироваться" data-bind="click : save">
+                        <input type="submit" value="Зарегестрироваться" >
                     </div>
                 </fieldset>
             </form>

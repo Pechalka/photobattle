@@ -4,9 +4,12 @@ define(["knockout", "jquery"],
             var self = this;
 
             self.user_name = ko.observable('');
+            self.user_id = ko.observable('');
 
-            self.login = function(user_name){
-                self.user_name(user_name);
+
+            self.login = function(user){
+                self.user_name(user.name);
+                self.user_id(user._id);
             }
 
             self.logout = function(){
