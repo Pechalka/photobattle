@@ -7,6 +7,10 @@ define(["knockout", "jquery"],
             self.top_users = model.top_users;
             self.top_images = model.top_images;
 
+
+            self.current_batle = model.current_batle;
+
+            self.winner =  model.winner;
         };
     }
 );

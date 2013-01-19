@@ -13,3 +13,15 @@
     </li>
 </ul>
 
+<div data-bind="with : current_batle"> 
+    <img data-bind="attr : { src : image_path}">
+    <span data-bind="text : name"></span>
+</div>
+
+
+<div data-bind="with : winner"> 
+    <img data-bind="attr : { src : photo_path}">
+    <span data-bind="text : photo_name"></span>
+    <span data-bind="text : user_name"></span>
+</div>
+

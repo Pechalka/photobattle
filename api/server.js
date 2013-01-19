@@ -24,7 +24,16 @@ var result = {
         "image2.jpg",
         "image3.jpg",
         "image4.jpg",        
-    ]
+    ],
+    current_batle : {
+                image_path : 'test.jpg',
+                name : 'лучшй пейзаж'
+            },
+            winner :  {
+                photo_path : 'test.jpg',
+                photo_name : 'метрополитен',
+                user_name : 'Иван Иваныч'
+            }
 };
 
   res.json(200, result);
