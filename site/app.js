@@ -30,7 +30,8 @@ define(["knockout", "jquery",
             });   
         });
 
-		this.get('', function () {			
+		this.get('', function () {	
+        		
         	window.location = '#Index';
         });
 

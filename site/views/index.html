@@ -1,27 +1,35 @@
-<ul data-bind="foreach : top_users">
-    <li>
-        <img src="" data-bind="attr : { src : avatar_path}">
-        <a href="#" data-bind="text: nick"></a>
-        <span data-bind="text : name"></span>
-    </li>
-</ul>
-
-
-<ul data-bind="foreach : top_images">
-    <li>
-        <img src="" data-bind="attr : { src : $data}">
-    </li>
-</ul>
-
-<div data-bind="with : current_batle"> 
-    <img data-bind="attr : { src : image_path}">
-    <span data-bind="text : name"></span>
-</div>
-
-
-<div data-bind="with : winner"> 
-    <img data-bind="attr : { src : photo_path}">
-    <span data-bind="text : photo_name"></span>
-    <span data-bind="text : user_name"></span>
-</div>
-
+            <div class="row">
+                <div class="half_col">
+                    <div class="now_competition" data-bind="with : current_batle">
+                        <a href='#'>
+                            <img src="img/img_1.jpg" alt="" data-bind="attr : { src : image_path}"/>
+                            <span>Конкурс на<br/><b><span data-bind="text : name"></span></b></span>
+                        </a>    
+                    </div>                  
+                </div>
+                <div class="half_col">
+                    <div class="last_competition">
+                        <h3>Победитель конкурса<br/><b>улицы</b></h3>
+                        <div class="content_last_competition" data-bind="with : winner">
+                            <img  alt="" data-bind="attr : { src : photo_path}"/>
+                            <div class="name_of_img" >
+                                <a href="#" data-bind="text : user_name">Иван Иванович</a>
+                                <a href="#" class="name_image" data-bind="text : photo_name"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="full_section second_part">
+                    <h2>Лучшие работы за <b>24 часа</b></h2>
+                    <div class="grey_section">
+                        <!-- ko foreach : top_images -->
+                        <a href="#" class="prev_img">
+                             <img data-bind="attr : { src : $data}" alt=""/>
+                        </a>
+                        <!-- /ko  -->
+                        <a href="#" class="critic_link">Перейти к критике работ</a>
+                    </div>
+                </div>
+            </div>

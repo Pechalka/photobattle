@@ -18,17 +18,22 @@ app.get('/api/index', function(req, res){
     var result = {
         top_users : users,
         top_images : [
-            "image1.jpg",
-            "image2.jpg",
-            "image3.jpg",
-            "image4.jpg",        
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg",   
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg",
+            "img/small_img_3.jpg"     
         ],
         current_batle : {
-                    image_path : 'test.jpg',
+                    image_path : 'img/img_1.jpg',
                     name : 'лучшй пейзаж'
                 },
                 winner :  {
-                    photo_path : 'test.jpg',
+                    photo_path : 'img/img_2.jpg',
                     photo_name : 'метрополитен',
                     user_name : 'Иван Иваныч'
                 }
@@ -94,3 +99,59 @@ app.post('/api/upload/photo',
 app.listen(8080, function(){
   console.log("Express server listening on port %d", '8080');
 });
+
+
+// <a href="#" class="prev_img">
+//                             <img src="img/small_img_1.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_2.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_3.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_1.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_2.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_3.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_2.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_3.jpg" alt=""/>
+//                         </a>
+//                         <a href="#" class="prev_img">
+//                             <img src="img/small_img_2.jpg" alt=""/>
+//                         </a>
+
+// {# <ul data-bind="foreach : top_users">
+//     <li>
+//         <img src="" data-bind="attr : { src : avatar_path}">
+//         <a href="#" data-bind="text: nick"></a>
+//         <span data-bind="text : name"></span>
+//     </li>
+// </ul>
+
+
+// <ul data-bind="foreach : top_images">
+//     <li>
+//         <img src="" data-bind="attr : { src : $data}">
+//     </li>
+// </ul>
+
+// <div data-bind="with : current_batle"> 
+//     <img data-bind="attr : { src : image_path}">
+//     <span data-bind="text : name"></span>
+// </div>
+
+
+// <div data-bind="with : winner"> 
+//     <img data-bind="attr : { src : photo_path}">
+//     <span data-bind="text : photo_name"></span>
+//     <span data-bind="text : user_name"></span>
+// </div> #}
