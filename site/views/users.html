@@ -1,35 +1,31 @@
-<a data-bind="click : set_professional, css : { 'active' : type() == 'professional' }" >Профессионалы</a>
-<a data-bind="click : set_amateur, css : { 'active' : type() == 'amateur' }">Любители</a>
+
 <div class="inner wrapper">
-<div class="row">
-	<ul class="user_choice">
-		<li>
-			<a href="#" class='active'>Проффесионалы</a>
-		</li>
-		<li>
-			<a href="#">Любители</a>
-		</li>
-	</ul>
-	<div class="user_list" data-bind="foreach: users">
-		<div class="user_block">
-			<img src="img/big_ava.jpg" data-bind="attr : {src : '/content/uploads/photos/' + avatar_path}" alt=""/>
-			<div class="user_text">
-				<h3><a href="#" data-bind="text : nick"></a></h3>
-				<p data-bind="text: name"></p>
-				<p data-bind="text: description"></p>
-				<p class="reiting">Рейтинг:<b data-bind="text: rating">267</b></p>
-			</div>
-			<a href="#" class="yellow_button small_button">Вызвать на дуэль</a>
-		</div>
-	</div>
-	<div class="pager">
-		<ul>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#" class="active">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
+	<div class="row">
+		<ul class="user_choice">
+			<li>
+				<a data-bind="click : set_professional, css : { 'active' : type() == 'professional' }" >Профессионалы</a>
+			</li>
+			<li>
+				<a data-bind="click : set_amateur, css : { 'active' : type() == 'amateur' }">Любители</a>
+			</li>
 		</ul>
+		<div class="user_list" data-bind="foreach: users">
+			<div class="user_block">
+				<img src="img/big_ava.jpg" data-bind="attr : {src : '/content/uploads/photos/' + avatar_path}" alt=""/>
+				<div class="user_text">
+					<h3><a href="#" data-bind="text : nick"></a></h3>
+					<p data-bind="text: name"></p>
+					<p data-bind="text: description"></p>
+					<p class="reiting">Рейтинг:<b data-bind="text: rating">267</b></p>
+				</div>
+				<a href="#" class="yellow_button small_button">Вызвать на дуэль</a>
+			</div>
+		</div>
+		<div class="pager" >
+			<ul data-bind="foreach: pages ">
+				<li><a href="#" data-bind="text: $data, css: {active : $data == $parent.page()}">1</a></li>
+			</ul>
+		</div>
+		<br />
 	</div>
-</div>
 </div>

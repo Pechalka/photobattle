@@ -61,14 +61,19 @@ app.get('/api/users',
     });
 });
 
-app.get('/api/users_by_rating', 
+app.get('/api/users_pager', 
   function (req, res) {
-    db.User.find({})
-    .sort('-rating')
-    .exec(
-      function(e, users){
-        res.json(users, 200);
-    });
+    console.log(req.params.page);
+    var p = req.params.page || 1;
+    var type = req.params.type || 0;
+    db.User.paginate({},p, 10,
+      function(e, pages_count, items) {
+        res.json({
+          users : items,
+          total_pages : pages_count,
+          page : p
+        },200)
+      });
 });
 
 app.get('/api/top_users',
@@ -80,6 +85,7 @@ app.get('/api/top_users',
       function(e, users){
         res.json(users, 200);
     });
+
 });
 
 

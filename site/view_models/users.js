@@ -7,6 +7,7 @@ define(["knockout", "jquery", "qq"],
 
             self.type = ko.observable('amateur');
             self.page = ko.observable(1);
+            self.pages = ko.observableArray([])
 
             self.set_professional = function(){
                 self.type('professional');                
@@ -17,7 +18,14 @@ define(["knockout", "jquery", "qq"],
             }
 
              ko.computed(function(){
-                $.get("/api/users_by_rating", { type : self.type() , page : self.page() }, self.users);
+                $.get("/api/users_pager", { page : self.page() }, function(res) {
+                    self.pages([]);
+                    for (var i=1, j=res.total_pages; i <= j; i++) {
+                        self.pages.push(i);
+                    }
+                    self.page(res.page); 
+                    self.users(res.users);
+                });
              });   
 
             
