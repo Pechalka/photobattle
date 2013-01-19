@@ -1,6 +1,7 @@
-var mongoose = require('mongoose'),
-	Schema = mongoose.Schema,
-	db = {};
+var mongoose = require('mongoose')
+	,Schema = mongoose.Schema
+	,ObjectId = Schema.ObjectId
+	,db = {};
 
 mongoose.connect('mongodb://localhost/photobattle');
 
@@ -8,8 +9,8 @@ db.User = new Schema ({
 	name: String,
 	nick: String,
 	avatar_path: String,
-	rating: Number
-	type:
+	rating: Number,
+	type: Number
 });
 
 db.Battle = new Schema({
