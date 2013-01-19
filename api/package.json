@@ -1,18 +1,21 @@
 {
-  "name": "photobattle",
-  "description": "hackathon photo app",
-  "version": "0.0.1",
-  "author": "Photobattle Team",
-  "private": true,
-  "scripts": {
-    "start": "node server"
-  },
+  "name": "photobattle",
+  "description": "photobattle application",
+  "version": "0.0.1",
+  "author": "Team <2belikespring@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
 
-  "dependencies": {
-    "express": "3.0.x",
-    "mongoose": "3.5.x",
-    "passport": "0.1.x",
-    "passport-local": "0.1.x"
-  }
+  "dependencies": {
+    "express": "3.0.x",
+    "mongoose": "3.5.x",
+    "passport": "0.1.x",
+    "passport-local": "0.1.x"
+  },
+
+  "devDependencies": {
+  }
 
 }
