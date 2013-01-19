@@ -16,6 +16,7 @@ define(["knockout", "jquery",
 		app.content = ViewModelContainer();
 
         this.get('#Index', function () {
+
         	app.content.render("index", "/api/index");     	
         });
 

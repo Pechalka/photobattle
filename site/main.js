@@ -38,7 +38,6 @@ require([
     ], function(ko, $, App, Sammy){
 		$(function() {
 			window.app = App;
-			
 			ko.applyBindings(app);
 
 			app.run();

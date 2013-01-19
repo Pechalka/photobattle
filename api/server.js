@@ -45,12 +45,45 @@ app.get('/api/users',
     });
 });
 
+app.get('api/top_users',
+  function (req, res) {
+    db.User.find({ type : req.body.type }, function(e, users){
+      res.json(users, 200);
+    });
+});
+
+
 app.post('/api/user', 
   function (req, res) {
     console.log(req.body);
     var user = new db.User(req.body).save();
     res.json(user, 200);
   });
+// battle
+
+app.get('/api/battles', 
+  function (req, res) {
+    db.Battle.find( function(e, battles){
+      res.json(battles, 200);
+    });
+});
+
+app.get('api/active_battles',
+  function (req, res) {
+    db.Battle.find()
+    .where('start_date').lt(new Date())
+    .where('end_date').gt(new Date())
+    .exec(function(e, battles){
+      res.json(battles, 200);
+    });
+});
+
+app.post('/api/battle', 
+  function (req, res) {
+    console.log(req.body);
+    var battle = new db.Battle(req.body).save();
+    res.json(battle, 200);
+});
 
 // photo processing
 
