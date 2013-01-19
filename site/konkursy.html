@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <!--[if lt IE 9]>   <script src="/js/html5.js"></script><![endif]-->
-    <title>Photo Battle</title>
+    <title>Конкурсы</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/custom.js"></script>
@@ -76,7 +76,7 @@
 			<header id="header">
 				<nav id="navigation">
 					<ul>
-						<li><a href="#">Конкурсы</a></li>
+						<li><a href="#" class="active">Конкурсы</a></li>
 						<li><a href="#">Критика работ</a></li>
 						<li><a href="#">Дуэль</a></li>
 						<li><a href="#">Рейтинг</a></li>						
@@ -91,59 +91,83 @@
 				</div>
 			</header>
 			<div class="row">
-				<div class="half_col">
-					<div class="now_competition">
-						<a href='#'>
-							<img src="img/img_1.jpg" alt=""/>
-							<span>Конкурс на<br/><b>лучший пейзаж</b></span>
-						</a>	
-					</div>					
-				</div>
-				<div class="half_col">
-					<div class="last_competition">
-						<h3>Победитель конкурса<br/><b>улицы</b></h3>
-						<div class="content_last_competition">
-							<img src="img/img_2.jpg" alt=""/>
-							<div class="name_of_img">
-								<a href="#">Иван Иванович</a>
-								<a href="#" class="name_image">метрополитен</a>
-							</div>
-						</div>
+				<div class="competition_row">
+					<h2><b>открытые</b> конкурсы</h2>
+					<div class="list_competitions">
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>пейзаж</span>
+						</a>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>социальная</span>
+						</a>
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>портрет</span>
+						</a>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>фантазия</span>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="full_section second_part">
-					<h2>Лучшие работы за <b>24 часа</b></h2>
-					<div class="grey_section">
-						<a href="#" class="prev_img">
-							<img src="img/small_img_1.jpg" alt=""/>
+				<div class="competition_row">
+					<h2><b>будующие</b> конкурсы</h2>
+					<div class="list_competitions">
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>пейзаж</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_2.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>социальная</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_3.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>портрет</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_1.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>фантазия</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_2.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>социальная</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_3.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>портрет</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_2.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>фантазия</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_3.jpg" alt=""/>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="competition_row">
+					<h2><b>архив завершенных</b> конкурсов</h2>
+					<div class="list_competitions">
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>пейзаж</span>
 						</a>
-						<a href="#" class="prev_img">
-							<img src="img/small_img_2.jpg" alt=""/>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>социальная</span>
 						</a>
-						<a href="#" class="critic_link">Перейти к критике работ</a>
+						<a href="#">
+							<img src="img/konkurs.jpg" alt=""/>
+							<span>портрет</span>
+						</a>
+						<a href="#">
+							<img src="img/konkurs_2.jpg" alt=""/>
+							<span>фантазия</span>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -163,7 +187,6 @@
 			&copy; 2013 photosite
 		</div>
 	</footer>
-	</div>	
-	<script data-main="/main" src="vendor/require/require.js" type="text/javascript" />
+		</div>	
  </body>
  </html>
