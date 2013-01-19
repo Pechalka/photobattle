@@ -1,5 +1,5 @@
 var fs = require('fs')
-var photo_upload_dir = __dirname + '/..' + '/site/content/uploads/photos/';
+var photo_upload_dir = __dirname + '/../../site/content/uploads/photos/';
 
 exports.uploadPhoto = function(req, res) {
 	var params		= req.query;
@@ -11,7 +11,9 @@ exports.uploadPhoto = function(req, res) {
 	});
 
 	req.on('end', function(){		
-		
-
+		res.json({ 
+			success: true 
+			}
+		);
 	});
 };
