@@ -20,7 +20,9 @@ define(["knockout", "jquery",
         });
 
         this.get('#Upload', function () {
-            app.content.render("upload");   
+            app.content.render("upload", null, function(upload) {
+                upload.init();
+            });   
         });
 
 		this.get('', function () {			

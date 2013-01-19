@@ -7,15 +7,19 @@ require.config({
         "text": "vendor/require/text",
         "sammy" : "vendor/sammy-latest.min",
         "bootstrap" : "vendor/bootstrap/js/bootstrap.min",
-        
+        "qq" : "vendor/qq/qq",
+
+
         "stringTemplateEngine": "libs/stringTemplateEngine",
         "ViewModelContainer" : "libs/ViewModelContainer",
         "Grid" : "libs/SimpleGrid"
+        
     },
     shim: {
         "ko.mapping" : ["knockout"],
         "stringTemplateEngine": ["knockout"],
         "bootstrap" : ["jquery"]
+       
     }
 });
 
