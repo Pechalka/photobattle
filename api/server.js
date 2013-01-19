@@ -4,7 +4,10 @@ var express = require('express')
  // , passport = require('passport')
  // , LocalStrategy = require('passport-local').Strategy
   , db = require('./database').db
-  , photo_processing = require('./routes/photo_processing');
+  , photo_processing = require('./routes/photo_processing')
+  , user_model = require('./models.user');
+
+
 
 app.use(express.static(__dirname + "/../site/"));
 app.use(express.bodyParser());
@@ -40,7 +43,10 @@ var result = {
 
   res.json(200, result);
 });
+// user
 
+app.post('/api/user', 
+  user_model.add_user);
 
 // photo processing
 

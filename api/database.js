@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/photobattle');
 db.User = new Schema ({
 	name: String,
 	nick: String,
+	email: String,
 	avatar_path: String,
 	rating: Number,
 	type: Number
