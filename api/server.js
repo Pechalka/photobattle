@@ -12,6 +12,35 @@ app.use(express.cookieParser());
 app.use(express.static(__dirname + "/../site/"));
 
 
+app.get('/api/app_start', function(req, res){
+  var data = {
+                contests :[
+                                { title : 'Осень', sale_type : 'профессиональный' , _id : '1', image_path : 'img/ava_1.jpg' },
+                                { title : 'Осень', sale_type : 'профессиональный' , _id : '2', image_path : 'img/ava_1.jpg'},
+                                { title : 'Осень', sale_type : 'профессиональный' , _id : '3', image_path : 'img/ava_1.jpg'},
+                                { title : 'Осень', sale_type : 'профессиональный' , _id : '4', image_path : 'img/ava_1.jpg'},
+                                { title : 'Осень', sale_type : 'профессиональный' , _id : '5', image_path : 'img/ava_1.jpg'},
+                                { title : 'Осень', sale_type : 'профессиональный' , _id : '6', image_path : 'img/ava_1.jpg'}                    
+                            ],
+                top_users : [
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '1'},
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '2'},
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '3'},
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '4'},
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '5'},
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '6'},
+                { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '7'}
+            ],
+
+            current_user : {
+                user_name : '',
+                _id : ''
+            }
+
+            };
+    res.json(data, 200);        
+});
+
 app.get('/api/konkurs/:id', function(req, res){
   db.Battle.findById(req.params.id, function(e, item){
       res.json(item, 200);

@@ -16,12 +16,25 @@ define(["knockout", "jquery",
 
 		app.content = ViewModelContainer();
 
-        app.user_menu = ViewModelContainer('user_menu');
-        app.user_list = ViewModelContainer('user_rating');
-        app.list_of_contests = ViewModelContainer('list_of_contests');
+        app.user_menu = ViewModelContainer();
+
+        app.user_list = ViewModelContainer();
+        app.list_of_contests = ViewModelContainer();
 
         app.current_page = ko.observable('#Users');
         app.layout_css = ko.observable('wrapper');//inner_
+
+
+        app.init = function(init_data){
+            app.list_of_contests.render('list_of_contests', init_data.contests);
+
+            app.user_list.render('user_rating', init_data.top_users);
+
+            app.user_menu.render('user_menu', init_data.current_user);
+
+
+            app.run();
+        }
 
 
         $(app).on('login', function(e, user){
