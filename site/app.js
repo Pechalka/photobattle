@@ -19,7 +19,10 @@ define(["knockout", "jquery",
 
         app.current_user = null;
 
-        app.layout_css = ko.observable('inner_wrapper');
+
+        app.current_page = ko.observable('#Users');
+
+        app.layout_css = ko.observable('wrapper');//inner_
 
 
         $(app).on('login', function(e, user){
@@ -33,17 +36,20 @@ define(["knockout", "jquery",
         });
 
         this.get('#Users', function () {
-            app.content.render("users");   
+            app.content.render("users"); 
+            app.current_page('#Users'); 
         });
 
 
 
         this.get('#NewUser', function () {
-            app.content.render("new_user");   
+            app.content.render("new_user");
+            app.current_page('#Users');   
         });
 
         this.get('#sponsor', function () {
             app.content.render("sponsor");   
+            app.current_page('#sponsor');
         });
 
                 
@@ -77,19 +83,23 @@ define(["knockout", "jquery",
 
         this.get('#User/:id', function(){
             app.content.render('user_details', '/api/user/' + this.params["id"]);
+            app.current_page('#Users');
         });
 
         this.get('#add_konkurs', function(){
 
             app.content.render('add_konkurs');
+            app.current_page('#list_of_konkurs');
         });
 
         this.get('#list_of_konkurs', function(){
             app.content.render('list_of_konkurs');//, '/api/list_of_konkurs');
+            app.current_page('#list_of_konkurs');
         })
 
         this.get('#konkurs/:id', function(){
             app.content.render('konkurs_details', '/api/konkurs/' + this.params["id"]);
+            app.current_page('#list_of_konkurs');
         });
 
 		this.get('', function () {	

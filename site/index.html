@@ -112,7 +112,7 @@
 						</div>
 					</li>
 				</ul>
-				<a href="#" class="grey_button">Все конкурсы</a>
+				<a href="#list_of_konkurs" class="grey_button">Все конкурсы</a>
 			</div>
 			<div class="aside_part">
 				<p>Вы можете стать организатором конкурса по заданной вами тематике. Оставьте свой след в истории!</p>
@@ -123,11 +123,11 @@
 			<header id="header">
 				<nav id="navigation">
 					<ul>
-						<li><a  href="#Users">Фотографы</a></li>
-						<li><a href="#list_of_konkurs">Конкурсы</a></li>
+						<li><a href="#Users"  data-bind="css : { active : current_page() == '#Users' }">Фотографы</a></li>
+						<li><a href="#list_of_konkurs" data-bind="css : { active : current_page() == '#list_of_konkurs' }">Конкурсы</a></li>
 						<li><a href="#">Критика</a></li>
 						<li><a href="#">Дуэль</a></li>					
-						<li><a href="#sponsor">Спонсорам</a></li>
+						<li><a href="#sponsor"  data-bind="css : { active : current_page() == '#sponsor' }">Спонсорам</a></li>
 					</ul>
 				</nav>
 				<div class="enter_block">
@@ -137,7 +137,7 @@
 					<!-- /ko -->
 				</div>
 			</header>
- <!-- ko with : content -->			
+<!-- ko with : content -->			
 <!-- ko template:{ html: html, data : data} -->
 <!-- /ko -->
 <!-- /ko -->
