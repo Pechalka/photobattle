@@ -88,6 +88,10 @@ define(["knockout", "jquery",
             app.content.render('list_of_konkurs');//, '/api/list_of_konkurs');
         })
 
+        this.get('#konkurs/:id', function(){
+            app.content.render('konkurs_details', '/api/konkurs/' + this.params["id"]);
+        });
+
 		this.get('', function () {	
         	window.location = '#Index';
         });

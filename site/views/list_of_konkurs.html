@@ -1,10 +1,10 @@
             <div class="row">
                 <ul class="user_choice">
                     <li>
-                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Общие' }, click : set_all">Общие</a>
+                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Общий' }, click : set_all">Общие</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Спонсорские' }, click : set_sponsor" >Спонсорские</a>
+                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Спонсорский' }, click : set_sponsor" >Спонсорские</a>
                     </li>
                     <li>
                         <a href="javascript:void(0)" data-bind="css : { active : type() == 'Благотворительный' }, click : set_blago">Благотворительные</a>
@@ -15,7 +15,7 @@
                     <div class="user_block">
                         <img src="img/big_ava.jpg" alt=""/>
                         <div class="user_text">
-                            <h3><a href="#" data-bind="text : title"></a></h3>
+                            <h3><a data-bind="text : title, attr : { href : '#konkurs/' + _id  }"></a></h3>
                             <p data-bind="text : description">Меня сложно найти, легко потерять и невозможно забыть</p>
                             <p class="type" data-bind="text : sale_type"></p>
                         </div>

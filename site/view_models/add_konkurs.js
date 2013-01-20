@@ -37,7 +37,10 @@ define(["knockout", "jquery"],
                     winner_type : self.winner_type,
 
                     initial_fee : self.initial_fee,
-                    budget : self.budget 
+                    budget : self.budget ,
+
+                    start :    self.start,
+                    end   :     self.end 
                 };
 
                 //ko.toJSON(self);

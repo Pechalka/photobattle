@@ -12,7 +12,11 @@ app.use(express.cookieParser());
 app.use(express.static(__dirname + "/../site/"));
 
 
-
+app.get('/api/konkurs/:id', function(req, res){
+  db.Battle.findById(req.params.id, function(e, item){
+      res.json(item, 200);
+  });
+});
 
 app.get('/api/index', function(req, res){
   db.User.find({}, function(e, users){

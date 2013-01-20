@@ -4,15 +4,15 @@ define(["knockout", "jquery"],
             var self = this;
 
             self.items = ko.observableArray([]);
-            self.type = ko.observable('Общие');
+            self.type = ko.observable('Общий');
             self.page = ko.observable(1);
             self.pages = ko.observableArray([]);
 
             self.set_all = function(){
-                self.type('Общие');
+                self.type('Общий');
             }
             self.set_sponsor = function(){
-                self.type('Спонсорские');
+                self.type('Спонсорский');
             }
             self.set_blago = function(){
                 self.type('Благотворительный');
