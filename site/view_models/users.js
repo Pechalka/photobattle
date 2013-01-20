@@ -7,7 +7,7 @@ define(["knockout", "jquery", "qq"],
 
             self.type = ko.observable('amateur');
             self.page = ko.observable(1);
-            self.pages = ko.observableArray([])
+            self.pages = ko.observableArray([]);
 
             self.set_professional = function(){
                 self.type('professional');                

@@ -5,7 +5,7 @@ define(["knockout", "jquery"],
 
             self.title = '';
             self.description = '';
-            self.sale_type = ko.observable('general');
+            self.sale_type = ko.observable('Общий');
             self.winner_type = ko.observable('vote');
 
             self.initial_fee = '';

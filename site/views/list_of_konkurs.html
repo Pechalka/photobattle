@@ -1,0 +1,31 @@
+            <div class="row">
+                <ul class="user_choice">
+                    <li>
+                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Общие' }, click : set_all">Общие</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Спонсорские' }, click : set_sponsor" >Спонсорские</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-bind="css : { active : type() == 'Благотворительный' }, click : set_blago">Благотворительные</a>
+                    </li>
+                </ul>
+                <div class="user_list">
+                    <!-- ko foreach: items  -->
+                    <div class="user_block">
+                        <img src="img/big_ava.jpg" alt=""/>
+                        <div class="user_text">
+                            <h3><a href="#" data-bind="text : title"></a></h3>
+                            <p data-bind="text : description">Меня сложно найти, легко потерять и невозможно забыть</p>
+                            <p class="type" data-bind="text : sale_type"></p>
+                        </div>
+                        <a href="#" class="yellow_button small_button">присоединится</a>
+                    </div>
+                    <!-- /ko -->
+                    <div class="pager">
+                        <ul data-bind="foreach: pages ">
+                            <li><a href="#" data-bind="text: $data, css: {active : $data == $parent.page()}">1</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>

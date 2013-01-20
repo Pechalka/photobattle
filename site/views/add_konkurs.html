@@ -20,19 +20,19 @@
                         <div class="form_row">
                             <label>Тип конкурса:</label>
                             <div class="radio_button">
-                                <input data-bind="checked : sale_type" type="radio" value="general" name="role" id="role_1" tabindex="1" /> <label for="role_1">Общий</label></div>
+                                <input data-bind="checked : sale_type" type="radio" value="Общий" name="role" id="role_1" tabindex="1" /> <label for="role_1">Общий</label></div>
                             <div class="radio_button">
-                                <input data-bind="checked : sale_type" type="radio" value="sponsorship" name="role" id="role_2" tabindex="2" /> <label for="role_2">Спонсорский</label></div>
+                                <input data-bind="checked : sale_type" type="radio" value="Спонсорский" name="role" id="role_2" tabindex="2" /> <label for="role_2">Спонсорский</label></div>
                             <div class="radio_button">
-                                <input data-bind="checked : sale_type" value="charitable" type="radio" name="role" id="role_3" tabindex="3" /> <label for="role_3">Благотворительный</label></div>
+                                <input data-bind="checked : sale_type" value="Благотворительный" type="radio" name="role" id="role_3" tabindex="3" /> <label for="role_3">Благотворительный</label></div>
                         </div>
-                        <!-- ko if: sale_type() == 'sponsorship' -->
+                        <!-- ko if: sale_type() == 'Спонсорский' -->
                         <div class="form_row">
                             <label>Бюджет</label>
                             <input type="text" data-bind="value : budget"/>
                         </div>
                         <!-- /ko -->
-                        <!-- ko if: sale_type() != 'sponsorship' -->
+                        <!-- ko if: sale_type() != 'Спонсорский' -->
                         <div class="form_row">
                             <label>Первоначальный взнос</label>
                             <input type="text" data-bind="value : initial_fee"/>

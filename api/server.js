@@ -43,6 +43,20 @@ app.get('/api/index', function(req, res){
   });
 });
 
+app.get('/api/list_of_konkurs', 
+  function (req, res) {
+    var qpage = req.query.page || 1;
+    var qtype = req.query.type || "Общий";
+    db.Battle.paginate({sale_type : qtype}, qpage, 10,
+      function(e, pages_count, items) {
+        res.json({
+          items : items,
+          total_pages : pages_count,
+          page : qpage
+        },200)
+      });
+});
+
 app.post('/api/add_konkurs', function(req, res){
   //var data = JSON.parse(req.body);
   //console.log(data);

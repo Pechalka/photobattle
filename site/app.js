@@ -80,6 +80,10 @@ define(["knockout", "jquery",
             app.content.render('add_konkurs');
         });
 
+        this.get('#list_of_konkurs', function(){
+            app.content.render('list_of_konkurs');//, '/api/list_of_konkurs');
+        })
+
 		this.get('', function () {	
         	window.location = '#Index';
         });
