@@ -14,16 +14,20 @@ define(["knockout", "jquery", "qq", "ko.mapping"],
             };
 
             self.init_uploader = function() {
+                debugger
                 new qq.FileUploader({
                     element: $('#photo-upload')[0],
                     action: '/api/upload/photo',
+                    params : { user_id : self.user._id() },
+
+
                     onComplete: function(a, b, r){
                           $('.qq-upload-list').hide();
-                          self.user.avatar_path(r.avatar_path);
-                    },
-                    template: '<div class="qq-uploader">' +
+                          self.user.avatar_path( r.avatar_path);
+                    }
+                    ,                    template: '<div class="qq-uploader">' +
                                     '<pre class="qq-upload-drop-area"><span>{dragText}</span></pre>' +
-                                    '<div class="qq-upload-button btn btn-primary" style="width: auto;">upload</div>' +
+                                    '<button class="grey_button qq-upload-button" >Изменить изображение</button>' + 
                                     '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
                                     '</div>'
                 });
