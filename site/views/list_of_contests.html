@@ -2,7 +2,7 @@
 				<h4>Список конкурсов</h4>
 				<ul data-bind="foreach : contests">
 					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин" data-bind="attr : { src : image_path, alt : title }" />
+						<img  data-bind="attr : { src : image_path, alt : title }" style="width : 36px; height: 36px;"/>
 						<div class="text_part">
 							<a href="#" data-bind="text : title, attr : { href : '#konkurs/' + _id }"></a><br/>
 							<span data-bind="text : sale_type"></span>
