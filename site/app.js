@@ -16,7 +16,8 @@ define(["knockout", "jquery",
 
 		app.content = ViewModelContainer();
         app.user_menu = ViewModelContainer('user_menu');
-
+        app.user_list = ViewModelContainer('user_rating');
+        
         app.current_user = null;
 
 

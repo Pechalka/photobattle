@@ -12,61 +12,10 @@
 	<div class="wrapper " data-bind="class : layout_css">
 		<div class="content">
 		<aside>
-			<div class="aside_part">
-				<h4>Рейтинг фотографов</h4>
-				<ul>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo_2</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo_2</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo_2</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-				</ul>
-				<a href="#Users" class="grey_button">Все фотографы</a>
-			</div>
+			<!-- ko with : user_list -->			
+			<!-- ko template:{ html: html, data : data} -->
+			<!-- /ko -->
+			<!-- /ko -->
 			<div class="aside_part">
 				<h4>Список конкурсов</h4>
 				<ul>
