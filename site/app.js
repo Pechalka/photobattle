@@ -42,13 +42,17 @@ define(["knockout", "jquery",
             app.content.render("new_user");   
         });
 
+        this.get('#sponsor', function () {
+            app.content.render("sponsor");   
+        });
+
                 
         this.get('#Login', function(){
             $.colorbox({
                 onClosed : function(){
                     window.location = '#Index';
                 },
-                html:"<div id='test'><h1>Вход</h1><input data-bind='value : login' type='text'/> <input type='text' data-bind='value : password'/> <input type='button'  value='Войти' data-bind='click : login_click'/></div>"
+                html:"<div id='test'><h1>Вход в систему</h1><span style='font-size:17px;'>Имя пользователя:</span><input data-bind='value : login' type='text'/> </br> <span style='font-size:17px;'>Пароль:</span> <input type='password' data-bind='value : password'/> </br> <input type='button'  value='Войти' data-bind='click : login_click'/></div>"
             });
 
             var loginVM = function() {
@@ -87,9 +91,12 @@ define(["knockout", "jquery",
 		this.get('', function () {	
         	window.location = '#Index';
         });
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> Sponsors
 	});
 });		
