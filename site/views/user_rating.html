@@ -1,53 +1,11 @@
 			<div class="aside_part">
 				<h4>Рейтинг фотографов</h4>
-				<ul>
+				<ul data-bind="foreach : users">
 					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
+						<img data-bind="attr : { src : avatar_path, alt : name }"/>
 						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo_2</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo_2</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo_2</a><br/>
-							<span>Vasya Pupkin</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">komo</a><br/>
-							<span>Vasya Pupkin</span>
+							<a data-bind="text : nick, attr : { href : '#User/' + _id }"></a><br/>
+							<span data-bind="text : name"></span>
 						</div>
 					</li>
 				</ul>

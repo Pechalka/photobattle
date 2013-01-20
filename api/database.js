@@ -51,7 +51,9 @@ var BattleSchema = new Schema({
 	winner_type : String,
 
 	start: Date,
-	end: Date
+	end: Date,
+
+	image_path : String
 });
 
 db.Picture = new Schema({

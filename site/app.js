@@ -15,15 +15,12 @@ define(["knockout", "jquery",
 		var app = this;
 
 		app.content = ViewModelContainer();
+
         app.user_menu = ViewModelContainer('user_menu');
         app.user_list = ViewModelContainer('user_rating');
         app.list_of_contests = ViewModelContainer('list_of_contests');
 
-        app.current_user = null;
-
-
         app.current_page = ko.observable('#Users');
-
         app.layout_css = ko.observable('wrapper');//inner_
 
 
@@ -35,6 +32,7 @@ define(["knockout", "jquery",
 
         this.get('#Index', function () {
         	app.content.render("index", "/api/index");     	
+            app.current_page(''); 
         });
 
         this.get('#Users', function () {
@@ -101,11 +99,9 @@ define(["knockout", "jquery",
         });
 
 
-        this.get('#list_of_konkurs', function(){
-        
-            app.content.render('list_of_konkurs');//, '/api/list_of_konkurs');
-           app.current_page('#list_of_konkurs');
-          // app.layout_css('inner_wrapper');
+        this.get('#list_of_konkurs', function(){        
+            app.content.render('list_of_konkurs');
+            app.current_page('#list_of_konkurs');
         })
 
         this.get('#konkurs/:id', function(){
@@ -115,7 +111,7 @@ define(["knockout", "jquery",
         });
 
 		this.get('', function () {	
-       	window.location = '#Index';
+       	    window.location = '#Index';
         });
 	});
 });		

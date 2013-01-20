@@ -1,45 +1,11 @@
 <div class="aside_part">
 				<h4>Список конкурсов</h4>
-				<ul>
+				<ul data-bind="foreach : contests">
 					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
+						<img src="img/ava_1.jpg" alt="Вася Пупкин" data-bind="attr : { src : image_path, alt : title }" />
 						<div class="text_part">
-							<a href="#">Зимний пейзаж</a><br/>
-							<span>профессиональный</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">Осень</a><br/>
-							<span>благотворительный</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">Зимний пейзаж</a><br/>
-							<span>профессиональный</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">Осень</a><br/>
-							<span>благотворительный</span>
-						</div>
-					</li><li>
-						<img src="img/ava_1.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">Зимний пейзаж</a><br/>
-							<span>профессиональный</span>
-						</div>
-					</li>
-					<li>
-						<img src="img/ava_2.jpg" alt="Вася Пупкин"/>
-						<div class="text_part">
-							<a href="#">Осень</a><br/>
-							<span>благотворительный</span>
+							<a href="#" data-bind="text : title, attr : { href : '#konkurs/' + _id }"></a><br/>
+							<span data-bind="text : sale_type"></span>
 						</div>
 					</li>
 				</ul>
