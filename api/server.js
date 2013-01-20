@@ -130,6 +130,20 @@ app.post('/api/user',
     var user = new db.User(req.body).save();
     res.json(user, 200);
   });
+
+app.post('/api/update_user', function (req, res) {
+  console.log(req.body._id);
+  db.User.findById(req.body._id, function (err, user) {
+      if (err) throw err;
+
+      user.name = req.body.name;
+      user.nick = req.body.nick;
+      user.description = req.body.description;
+      user.save();
+      
+      res.json(user, 200);
+    });
+});
 // battle
 
 app.get('/api/battles', 

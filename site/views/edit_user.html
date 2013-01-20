@@ -1,5 +1,6 @@
 <h1>Редактирование</h1>
 <form class="form edit_form" data-bind="submit : save" method="POST">
+	<!-- ko with : user --> 
 	<fieldset>
 		<div class="special_block">
 			<div class="avatar_block">
@@ -10,15 +11,15 @@
 		<div class="usual_block">
 			<div class="form_row">
 				<label>Имя</label>
-				<input type="text"/>
+				<input data-bind="value: name" type="text"/>
 			</div>
 			<div class="form_row">
-				<label>Фамилия</label>
-				<input type="text"/>
+				<label>Ник</label>
+				<input data-bind="value: nick" type="text"/>
 			</div>
 			<div class="form_row">
 				<label>О себе</label>
-				<textarea></textarea>
+				<textarea data-bind="text: description"></textarea>
 			</div>
 			</div>
 		
@@ -26,4 +27,5 @@
 			<input type="submit" value="Сохранить изменения">
 		</div>
 	</fieldset>
+	<!-- /ko -->
 </form>

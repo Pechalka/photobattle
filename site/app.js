@@ -87,9 +87,16 @@ define(["knockout", "jquery",
         });
 
         this.get('#add_konkurs', function(){
-
             app.content.render('add_konkurs');
             app.current_page('#list_of_konkurs');
+        });
+        
+        this.get('#EditUser/:id', function() {
+            app.content.render('edit_user', '/api/user/' + this.params["id"]);
+        });
+
+		this.get('', function () {	
+        	window.location = '#Index';
         });
 
         this.get('#list_of_konkurs', function(){
