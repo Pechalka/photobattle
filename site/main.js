@@ -9,6 +9,7 @@ require.config({
         "bootstrap" : "vendor/bootstrap/js/bootstrap.min",
         "qq" : "vendor/qq/qq",
 
+        "class" : "libs/class",
 
         "stringTemplateEngine": "libs/stringTemplateEngine",
         "ViewModelContainer" : "libs/ViewModelContainer",
@@ -34,7 +35,9 @@ require([
     "libs/enterKey",
     "stringTemplateEngine",
 
-    "bootstrap"
+    "bootstrap",
+
+    "class"
 
     ], function(ko, $, App, Sammy){
         

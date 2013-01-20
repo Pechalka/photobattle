@@ -19,6 +19,7 @@ define(["knockout", "jquery",
 
         app.current_user = null;
 
+        app.layout_css = ko.observable('wrapper');
 
 
         $(app).on('login', function(e, user){
@@ -74,9 +75,18 @@ define(["knockout", "jquery",
             app.content.render('user_details', '/api/user/' + this.params["id"]);
         });
 
+        this.get('#add_konkurs', function(){
+
+            app.content.render('defaulLoq', function(content){
+                content.content.render('add_konkurs');
+            });
+            app.content.render('add_konkurs');
+        });
+
 		this.get('', function () {	
         	window.location = '#Index';
         });
+
 
 
 
