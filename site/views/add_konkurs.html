@@ -10,17 +10,17 @@
                     <div class="usual_block">
                         <div class="form_row">
                             <label>Название</label>
-                            <input type="text" />
+                            <input type="text" data-bind="value : name"/>
                         </div>
                         <div class="form_row">
                             <label>Описание</label>
-                            <textarea></textarea>
+                            <textarea data-bind="value : description"></textarea>
                         </div>
                         </div>
                         <div class="form_row">
                             <label>Тип конкурса:</label>
-                            <div class="radio_button"><input type="radio" name="role" id="role_1" tabindex="1" checked="checked"/> <label for="role_1">Общий</label></div>
-                            <div class="radio_button"><input type="radio" name="role" id="role_2" tabindex="2" /> <label for="role_2">Спонсорский</label></div>
+                            <div class="radio_button"><input data-bind="checked : type" type="radio" name="role" id="role_1" tabindex="1" /> <label for="role_1">Общий</label></div>
+                            <div class="radio_button"><input data-bind="checked : type" type="radio" name="role" id="role_2" tabindex="2" /> <label for="role_2">Спонсорский</label></div>
                             <div class="radio_button"><input type="radio" name="role" id="role_3" tabindex="3" /> <label for="role_3">Благотворительный</label></div>
                         </div>
                         <!--div class="form_row">

@@ -19,7 +19,7 @@ define(["knockout", "jquery",
 
         app.current_user = null;
 
-        app.layout_css = ko.observable('wrapper');
+        app.layout_css = ko.observable('inner_wrapper');
 
 
         $(app).on('login', function(e, user){
