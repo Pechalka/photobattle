@@ -3,7 +3,7 @@ define(["knockout", "jquery"],
         return function(model){
             var self = this;
 
-            self.user_name = ko.observable(model.user_name);
+            self.user_name = ko.observable(model.name);
             self.user_id = ko.observable(model._id);
 
 
@@ -13,8 +13,12 @@ define(["knockout", "jquery"],
             }
 
             self.logout = function(){
-                self.user_name('');
-                window.location = '#Index';
+                $.post('/api/logout', function(){
+                    self.user_name('');
+                    self.user_id('');
+                    window.location = '#Index';
+                });
+
             }
         };
     }

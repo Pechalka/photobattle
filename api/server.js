@@ -1,8 +1,6 @@
 var express = require('express')
   , app = express()
   , path = require('path')
- // , passport = require('passport')
- // , LocalStrategy = require('passport-local').Strategy
   , db = require('./database').db
   , photo_processing = require('./routes/photo_processing');
 
@@ -11,8 +9,15 @@ app.use(express.methodOverride());
 app.use(express.cookieParser()); 
 app.use(express.static(__dirname + "/../site/"));
 
+app.use(express.session({ secret: 'gangnam style'} ));
+
 
 app.get('/api/app_start', function(req, res){
+  
+  var current_user = req.session.current_user || {
+                name : '',
+                _id : ''
+            };
   var data = {
                 contests :[
                                 { title : 'Осень', sale_type : 'профессиональный' , _id : '1', image_path : 'img/ava_1.jpg' },
@@ -32,10 +37,7 @@ app.get('/api/app_start', function(req, res){
                 { name : 'Вася Пупкин', avatar_path : 'img/ava_2.jpg', nick : 'komo' , _id : '7'}
             ],
 
-            current_user : {
-                user_name : '',
-                _id : ''
-            }
+            current_user : current_user
 
             };
     res.json(data, 200);        
@@ -109,8 +111,17 @@ app.get('/api/user/:id', function(req, res){
 
 // user
 
+
+app.post('/api/logout', function(req, res){
+  req.session.destroy();
+  res.json('logout');
+});
+
 app.post('/api/login', function(req, res){
   db.User.find({ nick : req.body.login, password : req.body.password}, function(e, users){
+      
+      req.session.current_user = users[0];
+
       var data = {
         success : users.length > 0,
         user :  users[0]
@@ -209,77 +220,3 @@ app.listen(8080, function(){
   console.log("Express server listening on port %d", '8080');
 });
 
-
-// <a href="#" class="prev_img">
-//                             <img src="img/small_img_1.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_2.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_3.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_1.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_2.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_3.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_2.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_3.jpg" alt=""/>
-//                         </a>
-//                         <a href="#" class="prev_img">
-//                             <img src="img/small_img_2.jpg" alt=""/>
-//                         </a>
-
-// {# <ul data-bind="foreach : top_users">
-//     <li>
-//         <img src="" data-bind="attr : { src : avatar_path}">
-//         <a href="#" data-bind="text: nick"></a>
-//         <span data-bind="text : name"></span>
-//     </li>
-// </ul>
-
-
-// <ul data-bind="foreach : top_images">
-//     <li>
-//         <img src="" data-bind="attr : { src : $data}">
-//     </li>
-// </ul>
-
-// <div data-bind="with : current_batle"> 
-//     <img data-bind="attr : { src : image_path}">
-//     <span data-bind="text : name"></span>
-// </div>
-
-
-// <div data-bind="with : winner"> 
-//     <img data-bind="attr : { src : photo_path}">
-//     <span data-bind="text : photo_name"></span>
-//     <span data-bind="text : user_name"></span>
-// </div> #}
-
-
-// <h1>Регистрация</h1>
-
-// <div data-bind="with : user">
-//   <span>Имя:</span>
-//     <input type="text" data-bind="value : name"/></br>
-//     <span>Ник:</span>
-//     <input type="text" data-bind="value : nick"/></br>
-//     <span>Емэйл:</span>
-//     <input type="text" data-bind="value : email"/></br>
-    
-//     <input type="radio" name="group1" value="amateur" data-bind="checked : type"> Любитель</br>
-//     <input type="radio" name="group1" value="professional" data-bind="checked : type"> Профи</br> 
-// </br>
-    
-// </div>
-
-// <input type="button" value="save" data-bind="click : save" />
