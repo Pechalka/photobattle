@@ -13,7 +13,7 @@
 			<div class="user_block">
 				<img src="img/big_ava.jpg" data-bind="attr : {src : '/content/uploads/photos/' + avatar_path}" alt=""/>
 				<div class="user_text">
-					<h3><a href="#" data-bind="text : nick"></a></h3>
+					<h3><a  data-bind="text : nick, attr : { href : '#User/' + _id }"></a></h3>
 					<p data-bind="text: name"></p>
 					<p data-bind="text: description"></p>
 					<p class="reiting">Рейтинг:<b data-bind="text: rating">267</b></p>
