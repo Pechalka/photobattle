@@ -91,12 +91,5 @@ define(["knockout", "jquery",
 		this.get('', function () {	
         	window.location = '#Index';
         });
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> Sponsors
 	});
 });		
