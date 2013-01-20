@@ -79,11 +79,6 @@ var battle_types = {
 	2 : "duel" 
 };
 
-// var user_type = {
-// 	0: "admin",
-// 	1: "amateur",
-// 	2: "professional"
-// }
 
 db.User = mongoose.model('User', UserSchema);
 db.Battle = mongoose.model('Battle', BattleSchema)

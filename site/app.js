@@ -98,22 +98,22 @@ define(["knockout", "jquery",
                 });
         });
 
-		this.get('', function () {	
-        	window.location = '#Index';
-        });
 
         this.get('#list_of_konkurs', function(){
+        
             app.content.render('list_of_konkurs');//, '/api/list_of_konkurs');
-            app.current_page('#list_of_konkurs');
+           app.current_page('#list_of_konkurs');
+          // app.layout_css('inner_wrapper');
         })
 
         this.get('#konkurs/:id', function(){
             app.content.render('konkurs_details', '/api/konkurs/' + this.params["id"]);
             app.current_page('#list_of_konkurs');
+
         });
 
 		this.get('', function () {	
-        	window.location = '#Index';
+       	window.location = '#Index';
         });
 	});
 });		
