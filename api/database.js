@@ -42,19 +42,6 @@ var UserSchema = new Schema ({
 });
 
 
-            // self.title = '';
-            // self.description = '';
-            // self.sale_type = ko.observable('general');
-            // self.winner_type = ko.observable('vote');
-
-            // self.initial_fee = '';
-            // self.budget = ''; 
-
-            // self.jury = ko.observableArray([]);
-
-            // self.start = '';
-            // self.end = '';
-
 var BattleSchema = new Schema({
 	title: String,
 	description: String,
@@ -71,14 +58,7 @@ db.Picture = new Schema({
 	title: String,
 	image_path: String,
 	battle_id: { type: ObjectId, ref: 'Battle' }
-})
-
-var battle_types = {
-	0 : "general",
-	1 : "sponsor",
-	2 : "duel" 
-};
-
+});
 
 db.User = mongoose.model('User', UserSchema);
 db.Battle = mongoose.model('Battle', BattleSchema)
