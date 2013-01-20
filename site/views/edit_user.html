@@ -4,8 +4,8 @@
 	<fieldset>
 		<div class="special_block">
 			<div class="avatar_block">
-				<img src="img/no_ava.jpg" alt="">
-				<button class="grey_button">Добавить изображение</button>
+				<img data-bind="attr:{src : 'content/uploads/photos/' + avatar_path() }" alt="">
+				<div id="photo-upload" >Добавить изображение</div>
 			</div>
 		</div>
 		<div class="usual_block">

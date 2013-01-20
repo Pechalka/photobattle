@@ -92,7 +92,10 @@ define(["knockout", "jquery",
         });
         
         this.get('#EditUser/:id', function() {
-            app.content.render('edit_user', '/api/user/' + this.params["id"]);
+            app.content.render('edit_user', '/api/user/' + this.params["id"],
+                function(user) {
+                    user.init_uploader();
+                });
         });
 
 		this.get('', function () {	

@@ -12,8 +12,10 @@ exports.uploadPhoto = function(req, res) {
 
 	req.on('end', function(){		
 		res.json({ 
+			avatar_path: name,
 			success: true 
 			}
 		);
 	});
 };
+
