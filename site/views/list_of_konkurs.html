@@ -13,7 +13,7 @@
                 <div class="user_list">
                     <!-- ko foreach: items  -->
                     <div class="user_block">
-                        <img src="img/big_ava.jpg" alt=""/>
+                        <img  alt="" data-bind="attr : { src : image_path, alt : title}" style="width : 150px; height: 150px;">
                         <div class="user_text">
                             <h3><a data-bind="text : title, attr : { href : '#konkurs/' + _id  }"></a></h3>
                             <p data-bind="text : description">Меня сложно найти, легко потерять и невозможно забыть</p>

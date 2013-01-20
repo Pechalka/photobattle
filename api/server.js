@@ -206,6 +206,11 @@ app.post('/api/upload/photo',
   photo_processing.uploadPhoto
 );
 
+
+app.post('/api/upload/contest', 
+  photo_processing.upload_contest_photo
+ );
+
 app.listen(8080, function(){
   console.log("Express server listening on port %d", '8080');
 });

@@ -105,7 +105,9 @@ define(["knockout", "jquery",
         });
 
         this.get('#add_konkurs', function(){
-            app.content.render('add_konkurs');
+            app.content.render('add_konkurs', null, function(page) {
+                    page.init_uploader();
+            });
             app.current_page('#list_of_konkurs');
         });
         

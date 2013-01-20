@@ -53,7 +53,7 @@ var BattleSchema = new Schema({
 	start: Date,
 	end: Date,
 
-	image_path : { type : String, default : 'img/ava_1.jpg' }
+	image_path : { type : String, default : 'img/no_ava.jpg' } //img/ava_1.jpg
 });
 
 db.Picture = new Schema({

@@ -27,3 +27,21 @@ exports.uploadPhoto = function(req, res) {
 	});
 };
 
+exports.upload_contest_photo = function(req, res) {
+	var params		= req.query;
+	var name		= (new Date()).valueOf() + '.' + params.qqfile.split('.').pop(),
+		ws			= fs.createWriteStream(photo_upload_dir + name);
+
+	req.on('data', function(data){
+		ws.write(data);
+	});
+
+	req.on('end', function(){	
+		res.json({ 
+			image_path: 'content/uploads/photos/' + name,
+			success: true 
+			}
+		);	
+	});
+};
+
