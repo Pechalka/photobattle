@@ -130,6 +130,24 @@ define(["knockout", "jquery",
             app.layout_css('inner_wrapper');
         });
 
+        this.get('#duel', function(){
+            app.content.render('duel');
+            app.current_page('#duel');
+            app.layout_css('inner_wrapper');
+        });
+
+        this.get('#critic/:id', function(){
+            app.content.render('critic_details');
+            app.current_page('#critic');
+            app.layout_css('inner_wrapper');
+        });
+
+        this.get('#critic', function(){
+            app.content.render('critic');
+            app.current_page('#critic');
+            app.layout_css('inner_wrapper');
+        });
+
 		this.get('', function () {	
        	    window.location = '#Index';
         });

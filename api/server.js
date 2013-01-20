@@ -94,7 +94,6 @@ app.post('/api/add_konkurs', function(req, res){
 });
 
 app.get('/api/user/:id', function(req, res){
-  console.log(req.params);
   db.User.findById(req.params.id, function(e, user){
       res.json(user, 200);
   });
