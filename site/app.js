@@ -77,9 +77,6 @@ define(["knockout", "jquery",
 
         this.get('#add_konkurs', function(){
 
-            app.content.render('defaulLoq', function(content){
-                content.content.render('add_konkurs');
-            });
             app.content.render('add_konkurs');
         });
 

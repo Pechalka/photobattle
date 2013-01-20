@@ -5,7 +5,15 @@ define(["knockout", "jquery"],
 
             self.name = '';
             self.description = '';
-            self.type = '';
+            self.sale_type = ko.observable('general');
+            self.winner_type = ko.observable('vote');
+
+            self.start = '';
+            self.end = '';
+
+            self.add_konkurs = function(){
+                alert('sdf');
+            }
         };
     }
 );
