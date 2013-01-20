@@ -11,7 +11,7 @@
 		</ul>
 		<div class="user_list" data-bind="foreach: users">
 			<div class="user_block">
-				<img src="img/big_ava.jpg" data-bind="attr : {src : '/content/uploads/photos/' + avatar_path}" alt=""/>
+				<img  data-bind="attr : {src : avatar_path}"  style="width : 150px; height: 150px;"/>
 				<div class="user_text">
 					<h3><a  data-bind="text : nick, attr : { href : '#User/' + _id }"></a></h3>
 					<p data-bind="text: name"></p>
@@ -21,7 +21,7 @@
 				<a href="#" class="yellow_button small_button">Вызвать на дуэль</a>
 			</div>
 		</div>
-		<div class="pager" >
+		<div class="pager" data-bind="visible : pages().length > 1">
 			<ul data-bind="foreach: pages ">
 				<li><a href="#" data-bind="text: $data, css: {active : $data == $parent.page()}">1</a></li>
 			</ul>

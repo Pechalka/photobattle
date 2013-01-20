@@ -22,7 +22,7 @@ define(["knockout", "jquery",
         app.list_of_contests = ViewModelContainer();
 
         app.current_page = ko.observable('#Users');
-        app.layout_css = ko.observable('wrapper');//inner_
+        app.layout_css = ko.observable('');//inner_
 
 
         app.init = function(init_data){
@@ -46,11 +46,13 @@ define(["knockout", "jquery",
         this.get('#Index', function () {
         	app.content.render("index", "/api/index");     	
             app.current_page(''); 
+            app.layout_css('');
         });
 
         this.get('#Users', function () {
             app.content.render("users"); 
             app.current_page('#Users'); 
+            app.layout_css('inner_wrapper');
         });
 
 
@@ -58,11 +60,13 @@ define(["knockout", "jquery",
         this.get('#NewUser', function () {
             app.content.render("new_user");
             app.current_page('#Users');   
+            app.layout_css('');
         });
 
         this.get('#sponsor', function () {
             app.content.render("sponsor");   
             app.current_page('#sponsor');
+            app.layout_css('inner_wrapper');
         });
 
                 
@@ -97,6 +101,7 @@ define(["knockout", "jquery",
         this.get('#User/:id', function(){
             app.content.render('user_details', '/api/user/' + this.params["id"]);
             app.current_page('#Users');
+            app.layout_css('inner_wrapper');
         });
 
         this.get('#add_konkurs', function(){
@@ -109,18 +114,20 @@ define(["knockout", "jquery",
                 function(user) {
                     user.init_uploader();
                 });
+            app.layout_css('');
         });
 
 
         this.get('#list_of_konkurs', function(){        
             app.content.render('list_of_konkurs');
             app.current_page('#list_of_konkurs');
+            app.layout_css('inner_wrapper');
         })
 
         this.get('#konkurs/:id', function(){
             app.content.render('konkurs_details', '/api/konkurs/' + this.params["id"]);
             app.current_page('#list_of_konkurs');
-
+            app.layout_css('inner_wrapper');
         });
 
 		this.get('', function () {	

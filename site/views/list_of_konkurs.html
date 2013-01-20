@@ -22,8 +22,8 @@
                         <a href="#" class="yellow_button small_button">присоединится</a>
                     </div>
                     <!-- /ko -->
-                    <div class="pager">
-                        <ul data-bind="foreach: pages ">
+                    <div class="pager" data-bind="visible : pages().length > 1">
+                        <ul data-bind="foreach: pages " >
                             <li><a href="#" data-bind="text: $data, css: {active : $data == $parent.page()}">1</a></li>
                         </ul>
                     </div>

@@ -14,7 +14,6 @@ define(["knockout", "jquery", "qq", "ko.mapping"],
             };
 
             self.init_uploader = function() {
-                debugger
                 new qq.FileUploader({
                     element: $('#photo-upload')[0],
                     action: '/api/upload/photo',
