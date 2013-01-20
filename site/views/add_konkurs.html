@@ -10,7 +10,7 @@
                     <div class="usual_block">
                         <div class="form_row">
                             <label>Название</label>
-                            <input type="text" data-bind="value : name"/>
+                            <input type="text" data-bind="value : title"/>
                         </div>
                         <div class="form_row">
                             <label>Описание</label>
@@ -29,13 +29,13 @@
                         <!-- ko if: sale_type() == 'sponsorship' -->
                         <div class="form_row">
                             <label>Бюджет</label>
-                            <input type="text"/>
+                            <input type="text" data-bind="value : budget"/>
                         </div>
                         <!-- /ko -->
                         <!-- ko if: sale_type() != 'sponsorship' -->
                         <div class="form_row">
                             <label>Первоначальный взнос</label>
-                            <input type="text"/>
+                            <input type="text" data-bind="value : initial_fee"/>
                         </div>
                         <!-- /ko -->
                         
@@ -48,7 +48,7 @@
                         </div>
 
                         <!-- ko if: winner_type() == 'jury' -->    
-                        <div class="form_row">
+                        <div class="form_row" data-bind="with : new_jury">
                         <div class="special_block">
                                 <div class="avatar_block">
                                     <img src="img/no_ava.jpg" alt="">
@@ -58,15 +58,15 @@
                             <div class="usual_block">
                                 <div class="form_row">
                                     <label>Название</label>
-                                    <input type="text"/>
+                                    <input type="text" data-bind="value : name"/>
                                 </div>
                                 <div class="form_row">
                                     <label>Описание</label>
-                                    <textarea></textarea>
+                                    <textarea data-bind="value : description"></textarea>
                                 </div>
                             </div>
                             <div class="form_row">
-                            <button class="yellow_button small_button">Добавить еще</button>
+                            <button class="yellow_button small_button" data-bind="click : $parent.add_jury">Добавить еще</button>
                             </div>
                         </div>
                         <!-- /ko -->

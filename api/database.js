@@ -41,14 +41,30 @@ var UserSchema = new Schema ({
 	type: { type : String, default : 'amateur' }
 });
 
+
+            // self.title = '';
+            // self.description = '';
+            // self.sale_type = ko.observable('general');
+            // self.winner_type = ko.observable('vote');
+
+            // self.initial_fee = '';
+            // self.budget = ''; 
+
+            // self.jury = ko.observableArray([]);
+
+            // self.start = '';
+            // self.end = '';
+
 var BattleSchema = new Schema({
 	title: String,
-	image_path: String,
 	description: String,
-	type: Number,
-	start_date: Date,
-	end_date: Date,
-	prize: Number
+	
+	sale_type : String,
+
+	winner_type : String,
+
+	start: Date,
+	end: Date
 });
 
 db.Picture = new Schema({

@@ -43,6 +43,16 @@ app.get('/api/index', function(req, res){
   });
 });
 
+app.post('/api/add_konkurs', function(req, res){
+  //var data = JSON.parse(req.body);
+  //console.log(data);
+  
+  var battle = new db.Battle(req.body);
+  battle.save();
+
+  res.json('ok');
+});
+
 app.get('/api/user/:id', function(req, res){
   console.log(req.params);
   db.User.findById(req.params.id, function(e, user){
