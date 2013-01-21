@@ -32,7 +32,7 @@
 		<div class="comment_block">
 			<img  data-bind="attr : { src : avatar_path, alt : user_nick }" />
 			<div class="comment_text">
-				<a href="#" data-bind="text : user_nick, arrt : { href : '#User/' + user_id }"></a>
+				<a data-bind="text : user_nick, attr : { href : '#User/' + user_id }"></a>
 				<span class="date" data-bind="text : date"></span>
 				<p data-bind="text : text"></p>
 			</div>
