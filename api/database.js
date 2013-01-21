@@ -56,6 +56,19 @@ var BattleSchema = new Schema({
 	image_path : { type : String, default : 'img/no_ava.jpg' } //img/ava_1.jpg
 });
 
+var CriticSchema = new Schema({
+	name : String,
+	description: String,
+	
+	user_id : String,
+	user_nick : String,
+	user_type : String, 
+
+	image_path : { type : String, default : 'img/img_2.jpg' } 
+
+});
+
+
 db.Picture = new Schema({
 	title: String,
 	image_path: String,
@@ -63,7 +76,8 @@ db.Picture = new Schema({
 });
 
 db.User = mongoose.model('User', UserSchema);
-db.Battle = mongoose.model('Battle', BattleSchema)
+db.Battle = mongoose.model('Battle', BattleSchema);
+db.Critic = mongoose.model('Critic', CriticSchema); 
 
 exports.db = db;
 

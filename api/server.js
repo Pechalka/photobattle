@@ -207,6 +207,25 @@ app.post('/api/upload/photo',
 );
 
 
+app.post('/api/critic/new', function(req, res){
+    var critic = new db.Critic(req.body).save();
+    res.json(critic, 200);
+});
+
+app.get('/api/critic/list', function(req, res){
+    var qpage = req.query.page || 1;
+    var qtype = req.query.type || "amateur";
+    db.Critic.paginate({user_type : qtype}, qpage, 10,
+      function(e, pages_count, items) {
+        res.json({
+          items : items,
+          total_pages : pages_count,
+          page : qpage
+        },200)
+      });
+});
+
+
 app.post('/api/upload/contest', 
   photo_processing.upload_contest_photo
  );

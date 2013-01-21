@@ -1,0 +1,25 @@
+<h1>Редактирование</h1>
+<form class="form edit_form" data-bind="submit : save" method="POST">
+	<fieldset>
+		<div class="special_block">
+			<div class="avatar_block">
+				<img data-bind="attr:{src : image_path() }" alt="" style="width : 150px; height: 150px;">
+				<div id="photo-upload" ></div>
+			</div>
+		</div>
+		<div class="usual_block">
+			<div class="form_row">
+				<label>Название</label>
+				<input data-bind="value: name" type="text"/>
+			</div>
+			<div class="form_row">
+				<label>Описание</label>
+				<textarea data-bind="value: description"></textarea>
+			</div>
+			</div>
+		
+		<div class="form_row">
+			<input type="submit" value="Сохранить изменения">
+		</div>
+	</fieldset>
+</form>

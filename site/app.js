@@ -22,8 +22,9 @@ define(["knockout", "jquery",
         app.list_of_contests = ViewModelContainer();
 
         app.current_page = ko.observable('#Users');
-        app.layout_css = ko.observable('');//inner_
+        app.layout_css = ko.observable('');
 
+        app.user = null;
 
         app.init = function(init_data){
             app.list_of_contests.render('list_of_contests', init_data.contests);
@@ -40,6 +41,7 @@ define(["knockout", "jquery",
         $(app).on('login', function(e, user){
             app.user_menu.action(function(menu){
                 menu.login(user);
+                app.user = user;
             });
         });
 
@@ -85,7 +87,6 @@ define(["knockout", "jquery",
                 self.login_click = function(){
                     window.location = '#Index';
                     $.colorbox.close();
-                    $(app).trigger('login', 'vasa');
                     $.post('/api/login', { login : self.login, password : self.password}, function(result){
                         if (result.success)
                             $(app).trigger('login', result.user);
@@ -138,17 +139,34 @@ define(["knockout", "jquery",
             app.layout_css('inner_wrapper');
         });
 
+        this.get('#critic', function(){
+            app.content.render('critic');
+            app.current_page('#critic');
+            app.layout_css('inner_wrapper');
+        });
+
+        this.get('#critic/new', function(){
+            debugger
+            if (!app.user)  {
+                window.location = '#Index';
+                return;
+            }
+
+            app.content.render('critic_new', app.user,  function(page) {
+                    page.init_uploader();
+                });
+            app.current_page('#critic');
+            app.layout_css('inner_wrapper');
+        });
+
+
         this.get('#critic/:id', function(){
             app.content.render('critic_details');
             app.current_page('#critic');
             app.layout_css('inner_wrapper');
         });
 
-        this.get('#critic', function(){
-            app.content.render('critic');
-            app.current_page('#critic');
-            app.layout_css('inner_wrapper');
-        });
+        
 
 		this.get('', function () {	
        	    window.location = '#Index';

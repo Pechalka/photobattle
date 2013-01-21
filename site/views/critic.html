@@ -2,19 +2,20 @@
 			<div class="row">
 				<ul class="user_choice">
 					<li>
-						<a href="#" class='active'>Проффесионалы</a>
+						<a data-bind="click : set_professional, css : { 'active' : type() == 'professional' }" >Профессионалы</a>
 					</li>
 					<li>
-						<a href="#">Любители</a>
+						<a data-bind="click : set_amateur, css : { 'active' : type() == 'amateur' }">Любители</a>
 					</li>
 				</ul>
 				<div class="user_list">
+					<!-- ko foreach : items -->
 					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
+						<img data-bind="attr : {src : image_path, alt : name}"  style="width : 150px; height: 150px;"/>
 						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
+							<h3><a data-bind="attr : { href : '#critic/' + _id }, text : name"></a></h3>
+							<a href="#" data-bind="text : user_nick, attr : { href : '#User/' + user_id}"></a>
+							<p data-bind="text : description"></p>
 							<div class="critic_block">
 								<a href="#">&mdash;</a>
 								<span>226</span>
@@ -22,117 +23,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="user_block">
-						<img src="img/big_ava.jpg" alt=""/>
-						<div class="user_text">
-							<h3><a href="#critic/1">Мишки в лесу</a></h3>
-							<a href="#">Blackrainbow</a>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
-							<div class="critic_block">
-								<a href="#">&mdash;</a>
-								<span>226</span>
-								<a href="#">+</a>
-							</div>
-						</div>
-					</div>
-					<div class="pager">
-						<ul>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#" class="active">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
+					<!-- /ko -->
+					<div class="pager" data-bind="visible : pages().length > 1">
+						<ul data-bind="foreach: pages ">
+							<li><a href="#" data-bind="text: $data, css: {active : $data == $parent.page()}">1</a></li>
 						</ul>
 					</div>
 				</div>
