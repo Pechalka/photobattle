@@ -20,12 +20,12 @@ define(["knockout", "jquery", "qq"],
             self.create = function(){
             	var data = {
             		avatar_path1 : self.avatar_path1(),
-            		user_name1 : self.user1().nick,
+            		user_nick1 : self.user1().nick,
             		user_id1 : self.user1()._id,
             		name1 : self.name1,
 
-            		avatar_path2 : self.avatar_path1(),
-            		user_name2 : self.user2().nick,
+            		avatar_path2 : self.avatar_path2(),
+            		user_nick2 : self.user2().nick,
             		user_id2 : self.user1()._id,
             		name2 : self.name2,
 

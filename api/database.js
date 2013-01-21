@@ -82,12 +82,12 @@ var CommentSchema = new Schema({
 
 var DuelSchema = new Schema({
 	avatar_path1 : String,
-	user_name1 : String,
+	user_nick1 : String,
 	user_id1 : String,
 	name1 : String,
 
 	avatar_path2 : String,
-	user_name2 : String,
+	user_nick2 : String,
 	user_id2 : String,
 	name2 : String,
 

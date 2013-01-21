@@ -1,222 +1,40 @@
 			<h1>Дуэли</h1>
 			<div class="row">
-				<ul class="user_choice">
-					<li>
-						<a href="#" class='active'>Открытые</a>
-					</li>
-					<li>
-						<a href="#">Закрытые</a>
-					</li>
-				</ul>
+		<ul class="user_choice">
+			<li>
+				<a data-bind="click : set_open, css : { 'active' : type() == 'Открытая' }" >Открытые</a>
+			</li>
+			<li>
+				<a data-bind="click : set_close, css : { 'active' : type() == 'Закрытая' }">Закрытые</a>
+			</li>
+		</ul>
 				<div class="user_list">
+					<!-- ko foreach : items -->
 					<div class="battle_block">
 						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
+							<img  data-bind="attr : { src : avatar_path1 , alt : name1 }"/>
 							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
+								<a data-bind="attr : { href : '#User/' + user_id1 }, text : user_nick1"></a>
+								<p data-bind="text : name1"></p>
 								<button class="yellow_button small_button">Нравится</button>
 								<p class="reiting">222 голоса</p>
 							</div>
 						</div>
 						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
+							<img  data-bind="attr : { src : avatar_path2 , alt : name2 }"/>
 							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
+								<a data-bind="attr : { href : '#User/' + user_id2 }, text : user_nick2"></a>
+								<p data-bind="text : name2"></p>
 								<button class="yellow_button small_button">Нравится</button>
 								<p class="reiting">222 голоса</p>
 							</div>
 						</div>
 					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="battle_block">
-						<div class="left_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-						<div class="right_battle">
-							<img src="img/big_ava.jpg" alt=""/>
-							<div class="buttle_text">
-								<a href="#">BlackRainbow</a>
-								<p>Мишка в лесу</p>
-								<button class="yellow_button small_button">Нравится</button>
-								<p class="reiting">222 голоса</p>
-							</div>
-						</div>
-					</div>
-					<div class="pager">
-						<ul>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#" class="active">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-						</ul>
-					</div>
+					<!-- /ko -->
+		<div class="pager" data-bind="visible : pages().length > 1">
+			<ul data-bind="foreach: pages ">
+				<li><a href="#" data-bind="text: $data, css: {active : $data == $parent.page()}">1</a></li>
+			</ul>
+		</div>
 				</div>
 			</div>

@@ -264,6 +264,19 @@ app.post('/api/duel_create', function(req, res){
     res.json(item, 200);
 });
 
+app.get('/api/duel_list', function(req, res){
+    var qpage = req.query.page || 1;
+    var qtype = req.query.type || "Открытая";
+    db.Duel.paginate({ type : qtype}, qpage, 10,
+      function(e, pages_count, items) {
+        res.json({
+          items : items,
+          total_pages : pages_count,
+          page : qpage
+        },200)
+      });
+});
+
 
 
 app.post('/api/upload/contest', 
