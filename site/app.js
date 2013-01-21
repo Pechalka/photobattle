@@ -140,6 +140,16 @@ define(["knockout", "jquery",
             app.layout_css('inner_wrapper');
         });
 
+
+        this.get('#duel/new', function(){
+            app.content.render('duel_new', '/api/duel_new', function(page) {
+                    page.init_uploader();
+                });
+            app.current_page('#duel');
+            app.layout_css('inner_wrapper');
+        });
+
+
         this.get('#critic', function(){
             app.content.render('critic');
             app.current_page('#critic');

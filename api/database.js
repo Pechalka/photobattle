@@ -80,18 +80,28 @@ var CommentSchema = new Schema({
 	critic_id : String
 });
 
+var DuelSchema = new Schema({
+	avatar_path1 : String,
+	user_name1 : String,
+	user_id1 : String,
+	name1 : String,
 
+	avatar_path2 : String,
+	user_name2 : String,
+	user_id2 : String,
+	name2 : String,
 
-db.Picture = new Schema({
-	title: String,
-	image_path: String,
-	battle_id: { type: ObjectId, ref: 'Battle' }
+	type : String
 });
+
+
 
 db.User = mongoose.model('User', UserSchema);
 db.Battle = mongoose.model('Battle', BattleSchema);
 db.Critic = mongoose.model('Critic', CriticSchema); 
 db.Comment = mongoose.model('Comment', CommentSchema); 
+db.Duel = mongoose.model('Duel', DuelSchema); 
+
 
 exports.db = db;
 

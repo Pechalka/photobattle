@@ -251,6 +251,21 @@ app.post('/api/critic/add_comment', function(req, res){
 });
 
 
+//----------------------------------
+
+app.get('/api/duel_new', function(req, res){
+  db.User.find({}, function (err, user) {
+      res.json(user, 200);
+    });
+});
+
+app.post('/api/duel_create', function(req, res){
+    var item = new db.Duel(req.body).save();
+    res.json(item, 200);
+});
+
+
+
 app.post('/api/upload/contest', 
   photo_processing.upload_contest_photo
  );

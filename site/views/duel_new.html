@@ -1,0 +1,51 @@
+<h1>Добавить дуэл</h1>
+<form class="form edit_form" data-bind="submit : create" method="POST">
+	<fieldset>
+		<div class="form_row">
+            <label>Тип дуэли:</label>
+            <div class="radio_button">
+                <input data-bind="checked : type" type="radio" value="Открытая" name="role" id="role_1" tabindex="1" /> <label for="role_1">Открытая</label></div>
+            <div class="radio_button">
+                <input data-bind="checked : type" type="radio" value="Закрытая" name="role" id="role_2" tabindex="2" /> <label for="role_2">Закрытая</label></div>
+        </div>
+
+		<div class="special_block">
+			<div class="avatar_block">
+				<img data-bind="attr:{src : avatar_path1() }" alt="" style="width : 150px; height: 150px;">
+				<div id="photo-upload1" ></div>
+			</div>
+		</div>
+		<div class="usual_block">
+			<div class="form_row">
+				<label>Название фото</label>
+				<input  type="text" data-bind="value : name1"/>
+			</div>
+			<div class="form_row">
+				<label>Учасник 1</label>
+				<select data-bind="options : users, optionsText : 'name', value : user1">			
+				</select>
+			</div>
+		</div>
+		<div style="clear:both"></div>
+		<div class="special_block">
+			<div class="avatar_block">
+				<img data-bind="attr:{src : avatar_path2() }" alt="" style="width : 150px; height: 150px;">
+				<div id="photo-upload2" ></div>
+			</div>
+		</div>
+		<div class="usual_block">
+			<div class="form_row">
+				<label>Название фото</label>
+				<input  type="text" data-bind="value : name2"/>
+			</div>
+			<div class="form_row">
+				<label>Учасник 2</label>
+				<select data-bind="options : users, optionsText : 'name', value : user2">		
+				</select>
+			</div>
+		</div>
+		<div class="form_row">
+			<input type="submit" value="Добавить дуэл">
+		</div>
+	</fieldset>
+</form>
