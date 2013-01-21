@@ -1,10 +1,10 @@
-			<h1>Мишки в лесу</h1>
+			<h1 data-bind="text : name">Мишки в лесу</h1>
 			<div class="row">
 				<div class="item_block">
 						<img src="img/img_2.jpg" alt=""/>
 						<div class="user_text">
-							<a href="#">Blackrainbow</a><br/>
-							<p>Меня сложно найти, легко потерять и невозможно забыть</p>
+							<a data-bind="text : user_nick, attr : { href : '#User/' + user_id }">Blackrainbow</a><br/>
+							<p data-bind="text : description"></p>
 							<p class="reiting">Рейтинг:<b>267</b></p>
 						</div>
 					</div>

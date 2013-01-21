@@ -11,8 +11,6 @@ define(["knockout", "jquery", "qq"],
                 new qq.FileUploader({
                     element: $('#photo-upload')[0],
                     action: '/api/upload/contest',
-                   // params : { user_id : self.user._id() },
-
 
                     onComplete: function(a, b, r){
                           $('.qq-upload-list').hide();
@@ -36,7 +34,7 @@ define(["knockout", "jquery", "qq"],
 		            user_nick : current_user.nick,
 		            user_type : current_user.type
             	};
-                debugger
+
             	$.post('/api/critic/new', data, function(){
             		window.location = '#critic';
             	});

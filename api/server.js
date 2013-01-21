@@ -201,6 +201,7 @@ app.post('/api/upload/photo',
 );
 
 
+
 app.post('/api/critic/new', function(req, res){
     var critic = new db.Critic(req.body).save();
     res.json(critic, 200);
@@ -219,6 +220,11 @@ app.get('/api/critic/list', function(req, res){
       });
 });
 
+app.get('/api/critic/:id' , function(req, res){
+  db.Critic.findById(req.params.id, function(e, item){
+      res.json(item, 200);
+  });
+});
 
 app.post('/api/upload/contest', 
   photo_processing.upload_contest_photo
