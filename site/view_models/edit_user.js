@@ -26,11 +26,11 @@ define(["knockout", "jquery", "qq", "ko.mapping"],
                     }
                     ,                    template: '<div class="qq-uploader">' +
                                     '<pre class="qq-upload-drop-area"><span>{dragText}</span></pre>' +
-                                    '<button class="grey_button qq-upload-button" >Изменить изображение</button>' + 
+                                    '<div class="qq-upload-button"><button  class="grey_button " type="button" >Изменить изображение</button></div>' +
                                     '<ul class="qq-upload-list" style="margin-top: 10px; text-align: center;"></ul>' +
                                     '</div>'
                 });
-           
+
             };
         };
 });
