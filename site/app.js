@@ -32,7 +32,8 @@ define(["knockout", "jquery",
             app.user_list.render('user_rating', init_data.top_users);
 
             app.user_menu.render('user_menu', init_data.current_user);
-
+            if (init_data.current_user)
+                app.user = init_data.current_user;
 
             app.run();
         }
@@ -146,7 +147,6 @@ define(["knockout", "jquery",
         });
 
         this.get('#critic/new', function(){
-            debugger
             if (!app.user)  {
                 window.location = '#Index';
                 return;

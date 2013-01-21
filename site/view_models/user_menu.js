@@ -3,6 +3,11 @@ define(["knockout", "jquery", "app"],
         return function(model){
             var self = this;
 
+            model = model || {
+                name : '',
+                _id : ''
+            }
+
             self.user_name = ko.observable(model.name);
             self.user_id = ko.observable(model._id);
 

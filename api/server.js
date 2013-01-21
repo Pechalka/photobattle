@@ -13,12 +13,6 @@ app.use(express.session({ secret: 'gangnam style'} ));
 
 
 app.get('/api/app_start', function(req, res){
-  
-  var current_user = req.session.current_user || {
-                name : '',
-                _id : ''
-            };
-
 
   db.User.find({}, function(e, users){      
      db.Battle.find({}, function(e, contests) {
@@ -26,7 +20,7 @@ app.get('/api/app_start', function(req, res){
                   contests :contests,
                   top_users : users
               ,
-              current_user : current_user
+              current_user : req.session.current_user 
 
               };
     res.json(data, 200);  
