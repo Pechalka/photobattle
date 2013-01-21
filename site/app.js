@@ -161,7 +161,10 @@ define(["knockout", "jquery",
 
 
         this.get('#critic/:id', function(){
-            app.content.render('critic_details', '/api/critic/' + this.params["id"]);
+            app.content.render('critic_details', '/api/critic/' + this.params["id"], function(content){
+                if (app.user)
+                    content.show_add_comment_form(app.user);
+            });
             app.current_page('#critic');
             app.layout_css('inner_wrapper');
         });

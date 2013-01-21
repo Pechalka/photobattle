@@ -189,7 +189,7 @@ app.get('api/active_battles',
 
 app.post('/api/battle', 
   function (req, res) {
-    console.log(req.body);
+    
     var battle = new db.Battle(req.body).save();
     res.json(battle, 200);
 });
@@ -221,10 +221,35 @@ app.get('/api/critic/list', function(req, res){
 });
 
 app.get('/api/critic/:id' , function(req, res){
-  db.Critic.findById(req.params.id, function(e, item){
-      res.json(item, 200);
+  var qpage = req.query.page || 1;
+  db.Critic.findById(req.params.id, function(e, critic){
+      db.Comment.paginate({ critic_id : critic._id}, qpage, 10,
+        function(e, pages_count, items) {
+          res.json({
+            critic : critic,
+
+            items : items,
+            total_pages : pages_count,
+            page : qpage
+          },200);
+      });
   });
 });
+
+app.post('/api/critic/add_comment', function(req, res){
+    new db.Comment(req.body).save(function(e, critic){
+      db.Comment.paginate({ critic_id : critic.critic_id }, 1, 10,
+        function(e, pages_count, items) {
+
+          res.json({
+            items : items,
+            total_pages : pages_count,
+            page : 1
+          },200);
+      });
+    });
+});
+
 
 app.post('/api/upload/contest', 
   photo_processing.upload_contest_photo

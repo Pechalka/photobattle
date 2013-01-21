@@ -1,90 +1,47 @@
-			<h1 data-bind="text : name">Мишки в лесу</h1>
-			<div class="row">
-				<div class="item_block">
-						<img src="img/img_2.jpg" alt=""/>
-						<div class="user_text">
-							<a data-bind="text : user_nick, attr : { href : '#User/' + user_id }">Blackrainbow</a><br/>
-							<p data-bind="text : description"></p>
-							<p class="reiting">Рейтинг:<b>267</b></p>
-						</div>
-					</div>
-				</div>
-			<div class="row">
-				<h2>Комментарии</h2>
-				<div class="comment_list">
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Это шедеврально!!!!!</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Это шедеврально!!!!!</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Это шедеврально!!!!!</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Это шедеврально!!!!!</p>
-						</div>
-					</div>
-					<div class="comment_block">
-						<img src="img/ava_1.jpg" alt="" />
-						<div class="comment_text">
-							<a href="#">Зайчик</a>
-							<span class="date">15/12/2003</span>
-							<p>Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen Lorem ipsum dolor sit amen</p>
-						</div>
-					</div>
-				</div>
-					
-					<div class="pager">
-						<ul>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#" class="active">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-						</ul>
-					</div>
-				</div>
+<!-- ko with : critic -->
+<h1 data-bind="text : name"></h1>
+<div class="row">
+	<div class="item_block">
+		<img src="img/img_2.jpg" alt=""/>
+		<div class="user_text">
+			<a data-bind="text : user_nick, attr : { href : '#User/' + user_id }"></a><br/>
+			<p data-bind="text : description"></p>
+			<p class="reiting">Рейтинг:<b>267</b></p>
+		</div>
+	</div>
+</div>
+<!-- /ko  -->
+<form class="form edit_form" data-bind="submit : add_coment, visible : can_add" method="POST">
+	<fieldset>
+		<div class="usual_block">
+			<div class="form_row">
+				<label>Комментарий</label>
+				<textarea data-bind="value: new_coment"></textarea>
+			</div>
+			</div>
+		
+		<div class="form_row">
+			<input type="submit" value="Добавить">
+		</div>
+	</fieldset>
+</form>
+
+<div class="row" data-bind="visible : comments().length > 0">
+	<h2>Комментарии</h2>
+	<div class="comment_list" data-bind="foreach : comments">
+		<div class="comment_block">
+			<img  data-bind="attr : { src : avatar_path, alt : user_nick }" />
+			<div class="comment_text">
+				<a href="#" data-bind="text : user_nick, arrt : { href : '#User/' + user_id }"></a>
+				<span class="date" data-bind="text : date"></span>
+				<p data-bind="text : text"></p>
+			</div>
+		</div>
+	</div>
+		
+	<div class="pager" data-bind="visible : pages().length > 1">
+		<ul data-bind="foreach: pages ">
+			<li><a data-bind="text: $data, css: {active : $data == $parent.page()}, click : $parent.go_to_page">1</a></li>
+		</ul>
+	</div>
+</div>

@@ -68,6 +68,19 @@ var CriticSchema = new Schema({
 
 });
 
+var CommentSchema = new Schema({
+	text : String,
+	date: String,
+	
+	user_id : String,
+	user_nick : String,
+
+	avatar_path : String,
+
+	critic_id : String
+});
+
+
 
 db.Picture = new Schema({
 	title: String,
@@ -78,6 +91,7 @@ db.Picture = new Schema({
 db.User = mongoose.model('User', UserSchema);
 db.Battle = mongoose.model('Battle', BattleSchema);
 db.Critic = mongoose.model('Critic', CriticSchema); 
+db.Comment = mongoose.model('Comment', CommentSchema); 
 
 exports.db = db;
 
