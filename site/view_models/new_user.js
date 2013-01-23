@@ -8,9 +8,7 @@ define(["knockout", "jquery", "qq", "ko.mapping"],
                     nick : '',
                     email : '',
                     password : '',
-                    repeat_password : '',
-                    description : '',
-                    type : 'amateur'
+                    repeat_password : ''
                 });
 
             self.save = function() {
