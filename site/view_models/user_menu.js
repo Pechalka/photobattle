@@ -18,12 +18,17 @@ define(["knockout", "jquery", "app"],
                 self.user_id(user._id);
             }
 
+            self.show_login = function(){
+                $(app).trigger('show_login');
+            };
+
             self.logout = function(){
                 $.post('/api/logout', function(){
-                    window.app.user = null;
+                    $(app).trigger('logout');
+                    app.user = null;
                     self.user_name('');
                     self.user_id('');
-                    window.location = '#Index';
+                  //  window.location = '#Index';
                 });
 
             }

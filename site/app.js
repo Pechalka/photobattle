@@ -10,8 +10,8 @@ define(["knockout", "jquery",
 		Sammy
 
 		) {
-		
-	return Sammy(function(){
+	if (!window.app)  
+	window.app = Sammy(function(){
 		var app = this;
 
 		app.content = ViewModelContainer();
@@ -20,6 +20,8 @@ define(["knockout", "jquery",
 
         app.user_list = ViewModelContainer();
         app.list_of_contests = ViewModelContainer();
+        app.popup = ViewModelContainer();
+
 
         app.current_page = ko.observable('#Users');
         app.layout_css = ko.observable('');
@@ -43,6 +45,18 @@ define(["knockout", "jquery",
             app.user_menu.action(function(menu){
                 menu.login(user);
                 app.user = user;
+            });
+        });
+
+        $(app).on('show_login', function(){
+            app.popup.render('login_form', null, function(){
+                $.colorbox({
+                    onClosed : function(){
+                        app.popup(null);
+                    },
+                    inline : true,
+                    href : '#login_form'
+                });
             });
         });
 
@@ -71,34 +85,6 @@ define(["knockout", "jquery",
             app.current_page('#sponsor');
             app.layout_css('inner_wrapper');
         });
-
-                
-        this.get('#Login', function(){
-            $.colorbox({
-                onClosed : function(){
-                    window.location = '#Index';
-                },
-                html:"<div id='test'><h1>Вход в систему</h1><span style='font-size:17px;'>Имя пользователя:</span><input data-bind='value : login' type='text'/> </br> <span style='font-size:17px;'>Пароль:</span> <input type='password' data-bind='value : password'/> </br> <input type='button'  value='Войти' data-bind='click : login_click'/></div>"
-            });
-
-            var loginVM = function() {
-                var self = this;
-                self.login = '';
-                self.password = '';
-                self.login_click = function(){
-                    window.location = '#Index';
-                    $.colorbox.close();
-                    $.post('/api/login', { login : self.login, password : self.password}, function(result){
-                        if (result.success)
-                            $(app).trigger('login', result.user);
-                                   
-                    });
-                }
-            };
-
-            ko.applyBindings(new loginVM(), $('#test')[0]);
-        });
-
 
         this.get('#User/:id', function(){
             app.content.render('user_details', '/api/user/' + this.params["id"]);
@@ -185,4 +171,5 @@ define(["knockout", "jquery",
        	    window.location = '#Index';
         });
 	});
+    return window.app;
 });		

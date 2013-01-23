@@ -41,9 +41,7 @@ define(["knockout", "jquery", "qq"],
                 new qq.FileUploader({
                     element: $('#photo-upload1')[0],
                     action: '/api/upload/contest',
-                   // params : { user_id : self.user._id() },
-
-
+                    
                     onComplete: function(a, b, r){
                           $('.qq-upload-list').hide();
                           self.avatar_path1( r.image_path);
@@ -58,9 +56,6 @@ define(["knockout", "jquery", "qq"],
            		new qq.FileUploader({
                     element: $('#photo-upload2')[0],
                     action: '/api/upload/contest',
-                   // params : { user_id : self.user._id() },
-
-
                     onComplete: function(a, b, r){
                           $('.qq-upload-list').hide();
                           self.avatar_path2( r.image_path);

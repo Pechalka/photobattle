@@ -1,5 +1,5 @@
-define(["knockout", "jquery"],
-    function(ko, $) {
+define(["knockout", "jquery", "app"],
+    function(ko, $, app) {
         return function(model){
             var self = this;
 
@@ -57,6 +57,16 @@ define(["knockout", "jquery"],
                     self.comments(res.items);
             	});
             }
+
+
+            $(app).on('login', function(user){
+                self.show_add_comment_form(user);
+            });
+
+            $(app).on('logout', function(user){
+                self.current_user = null;
+                self.can_add(false);
+            });
         };
     }
 );
