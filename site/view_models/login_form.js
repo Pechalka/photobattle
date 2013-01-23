@@ -7,6 +7,7 @@ define(["knockout", "jquery"],
                 self.login_click = function(){
                     if (self.login == '' || self.password == '')
                         return;
+                    
                     $.colorbox.close();
                     $.post('/api/login', { login : self.login, password : self.password}, function(result){
                         if (result.success)
