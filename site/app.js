@@ -165,7 +165,11 @@ define(["knockout", "jquery",
             app.layout_css('inner_wrapper');
         });
 
-        
+        this.get('#login_success', function(){
+            app.content.render('login_success');
+            app.current_page('');
+            app.layout_css('inner_wrapper');
+        });
 
 		this.get('', function () {	
        	    window.location = '#Index';

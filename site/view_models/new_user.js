@@ -15,7 +15,7 @@ define(["knockout", "jquery", "qq"],
 
             self.save = function() {
                 $.post("/api/user", self.user, function() {
-                    window.location = '#Login';
+                    window.location = '#login_success';
                 });
 
                 return false;
