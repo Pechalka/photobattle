@@ -164,7 +164,7 @@ app.post('/api/update_user', function (req, res) {
       user.nick = req.body.nick;
       user.description = req.body.description;
       user.save();
-      
+
       res.json(user, 200);
     });
 });
