@@ -836,3 +836,8 @@ a.close_link{
 	background: url(../img/close.png) 0 0 transparent no-repeat;
 	position:absolute;
 }
+
+.disabled{
+	color: #aeaeae !important;
+	background-color: #ffd878 !important;
+}

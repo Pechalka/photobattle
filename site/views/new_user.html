@@ -7,7 +7,7 @@
                         <input type="text" data-bind="value : name"/>
                     </div>
                     <div class="form_row">
-                        <label>Nickname</label>
+                        <label>Nickname *</label>
                         <input type="text" data-bind="value : nick"/>
                     </div>
                     <div class="form_row">
@@ -15,24 +15,27 @@
                         <input type="text" data-bind="value : description"/>
                     </div>
                     <div class="form_row">
-                        <label>E-mail</label>
+                        <label>E-mail *</label>
                         <input type="email" data-bind="value : email"/>
                     </div>
                     <div class="form_row">
-                        <label>Пароль</label>
+                        <label>Пароль *</label>
                         <input type="password" data-bind="value : password"/>
                     </div>
                     <div class="form_row">
-                        <label>Повторите пароль</label>
+                        <label>Повторите пароль *</label>
                         <input type="password" data-bind="value : repeat_password"/>
                     </div>
                     <div class="form_row">
                         <input type="radio" name="role" id="role_1" value="amateur" data-bind="checked : type"  /> <label for="role_1">Любитель</label>
                         <input type="radio" name="role" id="role_2" value="professional" data-bind="checked : type"  /> <label for="role_2">Профессионал</label>
                     </div>
+                    <div class="form_row">
+                        <label><input type="checkbox" data-bind="checked: $parent.agree_to_the_terms">Я прочел и согласен с условиями использования</label>
+                    </div>  
                     <!-- /ko -->
                     <div class="form_row">
-                        <input type="submit" value="Зарегестрироваться" >
+                        <input type="submit" value="Зарегестрироваться" data-bind="enable: can_create, css : { disabled : !can_create() }">
                     </div>
                 </fieldset>
             </form>
