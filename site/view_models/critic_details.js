@@ -28,6 +28,7 @@ define(["knockout", "jquery", "app"],
             }
 
             self.show_add_comment_form = function(user){
+
             	self.can_add(true);
             	self.current_user = user;
             }
@@ -59,11 +60,11 @@ define(["knockout", "jquery", "app"],
             }
 
 
-            $(app).on('login', function(user){
+            $(app).on('login', function(e, user){
                 self.show_add_comment_form(user);
             });
 
-            $(app).on('logout', function(user){
+            $(app).on('logout', function(e, user){
                 self.current_user = null;
                 self.can_add(false);
             });
