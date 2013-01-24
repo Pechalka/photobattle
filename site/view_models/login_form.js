@@ -7,12 +7,11 @@ define(["knockout", "jquery"],
                 self.login_click = function(){
                     if (self.login == '' || self.password == '')
                         return;
-                    
-                    $.colorbox.close();
                     $.post('/api/login', { login : self.login, password : self.password}, function(result){
-                        if (result.success)
+                        if (result.success){
                             $(app).trigger('login', result.user);
-                                   
+                            $.colorbox.close();
+                        }
                     });
                 }
         };

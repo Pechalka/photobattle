@@ -61,15 +61,6 @@ define(["knockout", "jquery",
         });
 
         $(app).on('show_add_photo', function(e, user_id){
-            // app.popup.render('add_photo', null, function(){
-            //     $.colorbox({
-            //         onClosed : function(){
-            //             app.popup(null);
-            //         },
-            //         inline : true,
-            //         href : '#login_form'
-            //     });
-            // });
             app.popup.render('user/add_photo', { user_id : user_id }, function(popup){
                 $.colorbox({
                     onClosed : function(){
@@ -90,16 +81,28 @@ define(["knockout", "jquery",
         });
 
         this.get('#Users', function () {
-            app.content.render("users"); 
+            app.content.render("user/list"); 
             app.current_page('#Users'); 
             app.layout_css('inner_wrapper');
         });
 
-
-
-        this.get('#NewUser', function () {
-            app.content.render("new_user");
+        this.get('#Users/new', function () {
+            app.content.render("user/new");
             app.current_page('#Users');   
+            app.layout_css('');
+        });
+
+        this.get('#Users/:id', function(){
+            app.content.render('user/details', '/api/user/' + this.params["id"]);
+            app.current_page('#Users');
+            app.layout_css('inner_wrapper');
+        });
+
+        this.get('#Users/:id/edit', function() {
+            app.content.render('user/edit', '/api/user/' + this.params["id"],
+                function(user) {
+                    user.init_uploader();
+                });
             app.layout_css('');
         });
 
@@ -109,11 +112,7 @@ define(["knockout", "jquery",
             app.layout_css('inner_wrapper');
         });
 
-        this.get('#User/:id', function(){
-            app.content.render('user/details', '/api/user/' + this.params["id"]);
-            app.current_page('#Users');
-            app.layout_css('inner_wrapper');
-        });
+        
 
         this.get('#add_konkurs', function(){
             app.content.render('add_konkurs', null, function(page) {
@@ -122,13 +121,7 @@ define(["knockout", "jquery",
             app.current_page('#list_of_konkurs');
         });
         
-        this.get('#EditUser/:id', function() {
-            app.content.render('edit_user', '/api/user/' + this.params["id"],
-                function(user) {
-                    user.init_uploader();
-                });
-            app.layout_css('');
-        });
+        
 
 
         this.get('#list_of_konkurs', function(){        
