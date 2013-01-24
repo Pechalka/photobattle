@@ -16,7 +16,14 @@
 					<p data-bind="text: description"></p>
 					<p class="reiting">Рейтинг:<b data-bind="text: rating">267</b></p>
 				</div>
-				<a href="#" class="yellow_button small_button">Вызвать на дуэль</a>
+				<!-- ko if : show_button  -->
+					<!-- ko if : is_me -->
+					<a data-bind="attr : { href : '#Users/' + _id + '/edit' }" class="yellow_button small_button" >Редакировать</a>
+					<!-- /ko -->
+					<!-- ko if : !is_me -->
+					<a href="#" class="yellow_button small_button" >Вызвать на дуэль</a>
+					<!-- /ko -->
+				<!-- /ko -->
 			</div>
 		</div>
 		<div class="pager" data-bind="visible : pages().length > 1">

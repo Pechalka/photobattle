@@ -1,5 +1,5 @@
-define(["knockout", "jquery", "qq"],
-    function(ko, $, qq) {
+define(["knockout", "jquery", "qq", "app"],
+    function(ko, $, qq, app) {
         return function(model){
             var self = this;
 
@@ -17,17 +17,32 @@ define(["knockout", "jquery", "qq"],
                 self.type('amateur');
             }
 
-             ko.computed(function(){
+            self.refresh = function(){
                 $.get("/api/users_pager", { page : self.page(), type : self.type() }, function(res) {
                     self.pages([]);
                     for (var i=1, j=res.total_pages; i <= j; i++) {
                         self.pages.push(i);
                     }
                     self.page(res.page); 
-                    self.users(res.users);
-                });
-             });   
 
+                    var users = ko.utils.arrayMap(res.users, function(item) {
+                        item.show_button = app.user;
+                        item.is_me = app.user && app.user._id == item._id;
+                        return item;
+                    });
+                    self.users(users);
+                });
+             };
+            ko.computed(self.refresh);   
+
+            //todo: clear memory mechanism
+            $(app).on('login', function(user){
+                self.refresh();
+            });
+
+            $(app).on('logout', function(user){
+                self.refresh();
+            });
             
         };
     }
