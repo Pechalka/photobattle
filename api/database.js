@@ -98,7 +98,9 @@ var PhotoSchema = new Schema({
 	title: String,
 	description: String,
 
-	image_path :  String
+	image_path :  String,
+
+	created_date : { type: Date, default: Date.now }
 });
 
 

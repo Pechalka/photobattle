@@ -44,7 +44,7 @@ define(["knockout", "jquery", "qq", "app"],
             }
 
             self.can_create = ko.computed(function(){
-             return self.user_id != ''
+                return self.user_id != ''
                 && self.title() != ''
                 && self.image_path() != ''
                 && self.image_path() != 'img/no_image.png';
