@@ -99,6 +99,7 @@ var PhotoSchema = new Schema({
 	description: String,
 
 	image_path :  String,
+	user_id : String,
 
 	created_date : { type: Date, default: Date.now }
 });

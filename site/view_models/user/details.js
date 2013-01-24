@@ -9,8 +9,27 @@ define(["knockout", "jquery", "app"],
             }
 
             $(app).on('add_photo', function(){
-            	alert('update photo');
+                self.go_to_page(self.page());
             });
+
+            self.page = ko.observable(1);
+            self.pages = ko.observableArray([]);
+
+            self.photos = ko.observableArray(model.photos);
+
+
+            self.go_to_page = function(page){
+                $.get('/api/user_photos/', { page : page, user_id : self._id},function(res){
+                    self.pages([]);
+                    for (var i=1, l=res.total_pages; i <= l; i++) {
+                        self.pages.push(i);
+                    }
+                    self.page(res.page); 
+                    self.photos(res.items);
+                });
+            }
+
+            self.go_to_page(1); // when page load, load photos
         };
     }
 );

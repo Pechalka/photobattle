@@ -282,6 +282,18 @@ app.post('/api/user/add_photo', function(req, res){
     res.json(item, 200);
 });
 
+app.get('/api/user_photos/', function(req, res){
+    var qpage = req.query.page || 1;
+    db.Photo.paginate({ user_id : req.query.user_id }, qpage, 15,
+      function(e, pages_count, items) {
+        res.json({
+          items : items,
+          total_pages : pages_count,
+          page : qpage
+        },200)
+      });
+});
+
 
 app.post('/api/upload/contest', 
   photo_processing.upload_contest_photo
