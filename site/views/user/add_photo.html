@@ -22,7 +22,7 @@
 						</div>
 					
 					<div class="form_row">
-						<input type="submit" value="Добавить">
+						<input type="submit" value="Добавить" data-bind="enable: can_create, css : { disabled : !can_create() }">
 					</div>
 				</fieldset>
 			</form>

@@ -5,7 +5,7 @@ define(["knockout", "jquery", "qq", "app"],
 
             self.user_id = model.user_id;
             self.image_path = ko.observable('img/no_image.png');
-            self.title = '';
+            self.title = ko.observable('');
             self.description = '';
 
             self.close = function(){
@@ -34,7 +34,7 @@ define(["knockout", "jquery", "qq", "app"],
                 var data = {
                     user_id : self.user_id,
                     image_path : self.image_path,
-                    title : self.title,
+                    title : self.title(),
                     description : self.description
                 };
                 $.post('/api/user/add_photo', data, function(){
@@ -42,6 +42,13 @@ define(["knockout", "jquery", "qq", "app"],
                 });
                 $.colorbox.close();
             }
+
+            self.can_create = ko.computed(function(){
+             return self.user_id != ''
+                && self.title() != ''
+                && self.image_path() != ''
+                && self.image_path() != 'img/no_image.png';
+            });
         };
     }
 );
