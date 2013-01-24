@@ -60,6 +60,29 @@ define(["knockout", "jquery",
             });
         });
 
+        $(app).on('show_add_photo', function(e, user_id){
+            // app.popup.render('add_photo', null, function(){
+            //     $.colorbox({
+            //         onClosed : function(){
+            //             app.popup(null);
+            //         },
+            //         inline : true,
+            //         href : '#login_form'
+            //     });
+            // });
+            app.popup.render('user/add_photo', { user_id : user_id }, function(popup){
+                $.colorbox({
+                    onClosed : function(){
+                        app.popup(null);
+                    },
+                    inline : true,
+                    href : '.popup'
+                });
+                popup.init_uploader();
+            });
+
+        });
+
         this.get('#Index', function () {
         	app.content.render("index", "/api/index");     	
             app.current_page(''); 
@@ -87,7 +110,7 @@ define(["knockout", "jquery",
         });
 
         this.get('#User/:id', function(){
-            app.content.render('user_details', '/api/user/' + this.params["id"]);
+            app.content.render('user/details', '/api/user/' + this.params["id"]);
             app.current_page('#Users');
             app.layout_css('inner_wrapper');
         });

@@ -277,6 +277,10 @@ app.get('/api/duel_list', function(req, res){
       });
 });
 
+app.post('/api/user/add_photo', function(req, res){
+    var item = new db.Photo(req.body).save();
+    res.json(item, 200);
+});
 
 
 app.post('/api/upload/contest', 

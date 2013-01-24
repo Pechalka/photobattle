@@ -1,0 +1,30 @@
+		<div class="popup">
+			<div class="inner_pop">
+			<a href="javascript:void(0)" class="close_link" data-bind="click : close">Закрыть</a>
+			<h2>Добавить фотографию</h2>
+			<form class="form add_form" data-bind="submit : add_photo" method="POST">
+				<fieldset>
+					<div class="special_block">
+						<div class="avatar_block">
+							<img data-bind="attr : { src : image_path }" alt="" style="width : 150px; height: 150px;">
+							<div id="photo-upload" ></div>
+						</div>
+					</div>
+					<div class="usual_block">
+						<div class="form_row">
+							<label>Название</label>
+							<input type="text" data-bind="value : title"/>
+						</div>
+						<div class="form_row">
+							<label>Описание</label>
+							<textarea data-bind="value : description"></textarea>
+						</div>
+						</div>
+					
+					<div class="form_row">
+						<input type="submit" value="Добавить">
+					</div>
+				</fieldset>
+			</form>
+			</div>
+		</div>

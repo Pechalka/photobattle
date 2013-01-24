@@ -94,6 +94,13 @@ var DuelSchema = new Schema({
 	type : String
 });
 
+var PhotoSchema = new Schema({
+	title: String,
+	description: String,
+
+	image_path :  String
+});
+
 
 
 db.User = mongoose.model('User', UserSchema);
@@ -101,7 +108,7 @@ db.Battle = mongoose.model('Battle', BattleSchema);
 db.Critic = mongoose.model('Critic', CriticSchema); 
 db.Comment = mongoose.model('Comment', CommentSchema); 
 db.Duel = mongoose.model('Duel', DuelSchema); 
-
+db.Photo = mongoose.model('Photo', PhotoSchema); 
 
 exports.db = db;
 
