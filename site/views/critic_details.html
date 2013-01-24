@@ -30,7 +30,7 @@
 	<h2>Комментарии</h2>
 	<div class="comment_list" data-bind="foreach : comments">
 		<div class="comment_block">
-			<img  data-bind="attr : { src : avatar_path, alt : user_nick }" />
+			<img  data-bind="attr : { src : avatar_path, alt : user_nick }" style="width : 36px; height: 36px;"/>
 			<div class="comment_text">
 				<a data-bind="text : user_nick, attr : { href : '#User/' + user_id }"></a>
 				<span class="date" data-bind="text : date"></span>
