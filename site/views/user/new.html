@@ -1,29 +1,32 @@
 <h1>Регистрация</h1>
+
             <form class="form register_form" data-bind="submit : save" method="POST">
                 <fieldset>
                      <!-- ko with : user --> 
                     <div class="form_row">
                         <label>Имя</label>
-                        <input type="text" data-bind="value : name"/>
+                        <input type="text" data-bind="value : name" name="name"/>
+                        <!-- <p class="error-msg">Это поле обязательно для ввода</p> -->
                     </div>
                     <div class="form_row">
-                        <label>Nickname *</label>
-                        <input type="text" data-bind="value : nick"/>
+                        <label>Nickname <span class="red">*</span></label>
+                        <input type="text" data-bind="value : nick" name="nick"/>
+                        <!-- <p class="error-msg">Это поле обязательно для ввода</p> -->
                     </div>
                     <div class="form_row">
-                        <label>E-mail *</label>
-                        <input type="email" data-bind="value : email"/>
+                        <label>E-mail <span class="red">*</span></label>
+                        <input type="text" data-bind="value : email" name="email" />
                     </div>
                     <div class="form_row">
-                        <label>Пароль *</label>
-                        <input type="password" data-bind="value : password"/>
+                        <label>Пароль <span class="red">*</span></label>
+                        <input type="password" data-bind="value : password" name="password" />
                     </div>
                     <div class="form_row">
-                        <label>Повторите пароль *</label>
-                        <input type="password" data-bind="value : repeat_password"/>
+                        <label>Повторите пароль <span class="red">*</span></label>
+                        <input type="password" data-bind="value : repeat_password" name="repeat_password" />
                     </div>
                     <div class="form_row">
-                        <label><input type="checkbox" data-bind="checked: $parent.agree_to_the_terms">Я прочел и согласен с условиями использования</label>
+                        <label><input type="checkbox" data-bind="checked: $parent.agree_to_the_terms">Я прочел и согласен с условиями использования <span class="red">*</span></label>
                     </div>  
                     <!-- /ko -->
                     <div class="form_row">

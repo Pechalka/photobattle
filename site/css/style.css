@@ -839,5 +839,28 @@ a.close_link{
 
 .disabled{
 	color: #aeaeae !important;
-	background-color: #ffd878 !important;
+	background: #ffe690 !important;
 }
+/*valid*/
+.error {
+	color: #b94a48;
+}
+.register_form fieldset {
+	margin: 0 190px 0 0;
+}
+.register_form fieldset input[name="name"],
+.register_form fieldset input[name="nick"],
+.register_form fieldset input[name="email"],
+.register_form fieldset input[name="password"],
+.register_form fieldset input[name="repeat_password"] {float: right;}
+label.error {
+	width: 210px;
+}
+.form.register_form {
+	width: 700px;
+}
+.form_row label:first-child {
+	margin: 0  0 0 209px;
+}
+.register_form .form_row {height: 56px;}
+.red {color:#b94a48;}

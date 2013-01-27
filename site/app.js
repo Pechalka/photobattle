@@ -87,7 +87,9 @@ define(["knockout", "jquery",
         });
 
         this.get('#Users/new', function () {
-            app.content.render("user/new");
+            app.content.render("user/new", null, function(content){
+                content.init_validation();
+            });
             app.current_page('#Users');   
             app.layout_css('');
         });
