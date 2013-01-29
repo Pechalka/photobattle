@@ -12,6 +12,22 @@ define(["knockout", "jquery", "app"],
                 self.go_to_page(self.page());
             });
 
+            self.can_edit = ko.observable(false);
+
+
+            $(app).on('login', function(e, user){
+                self.set_permission(user);
+            });
+
+            $(app).on('logout', function(e, user){
+                self.set_permission(user);
+            });
+
+            self.set_permission = function(user){
+                var can_edit = user && user._id == model._id;
+                self.can_edit(can_edit);
+            }
+
             self.page = ko.observable(1);
             self.pages = ko.observableArray([]);
 

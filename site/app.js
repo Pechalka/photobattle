@@ -68,7 +68,10 @@ define(["knockout", "jquery",
                     },
                     inline : true,
                     href : '.popup'
+                    , width: '550px'
+                    , height: '350px'
                 });
+                $('#cboxClose').hide();
                 popup.init_uploader();
             });
 
@@ -95,7 +98,9 @@ define(["knockout", "jquery",
         });
 
         this.get('#Users/:id', function(){
-            app.content.render('user/details', '/api/user/' + this.params["id"]);
+            app.content.render('user/details', '/api/user/' + this.params["id"], function(page){
+                page.set_permission(app.user)
+            });
             app.current_page('#Users');
             app.layout_css('inner_wrapper');
         });

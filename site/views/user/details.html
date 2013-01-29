@@ -6,7 +6,9 @@
                             <p data-bind="text : description"></p>
                             <p class="reiting">Рейтинг:<b data-bind="text : rating"></b></p>
                         </div>
+                        <!-- ko if : can_edit -->
                         <a data-bind="attr : {href : '#Users/' + _id + '/edit'}" class="yellow_button small_button">Редактировать</a>
+                        <!-- /ko -->
                     </div>
                 </div>
             <div class="row">
@@ -28,9 +30,11 @@
                     </li>
                 </ul>
                 <div class="user_info_block">
+                    <!-- ko if : can_edit -->
                     <div class="add_item">
                         <a href="javascript:void(0)" data-bind="click : add_photo">Добавить фотографию</a>
                     </div>
+                    <!-- /ko -->
                     <div class="user_gallery" data-bind="foreach : photos">
                         <div class="photo_item">
                             <a data-bind="attr: { href : image_path, title : title }"  onclick="return false;"  class="group1" >

@@ -7,7 +7,7 @@ define(["knockout", "jquery", "qq", "ko.mapping"],
             self.save = function() {
                 
                 $.post("/api/update_user", ko.toJS(self.user), function() {
-                    window.location = '#User/' + self.user._id();
+                    window.location = '#Users/' + self.user._id();
                 });
 
                 return false;
