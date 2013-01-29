@@ -17,7 +17,8 @@ define(["knockout", "jquery", "app"],
 
             self.photos = ko.observableArray(model.photos);
 
-   
+
+ 
             self.go_to_page = function(page){
                 $.get('/api/user_photos/', { page : page, user_id : self._id},function(res){
                     self.pages([]);
@@ -27,7 +28,12 @@ define(["knockout", "jquery", "app"],
                     self.page(res.page); 
                     self.photos(res.items);
 
-                    $(".group1").colorbox({rel:'group1'});
+                    //init colorbox
+                    $("a.group1").colorbox({
+                        rel:'group1', 
+                        returnFocus : false, 
+                        current : 'Фото {current} из {total}',  
+                        width:"50%", height:"50%" });
                 });
             }
 

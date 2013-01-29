@@ -33,9 +33,10 @@
                     </div>
                     <div class="user_gallery" data-bind="foreach : photos">
                         <div class="photo_item">
-                            <a href="javascript:void(0)" data-bind="attr : { href : image_path}" class="group1">
-                                <img  data-bind="attr : { src : image_path, alt : title }" style="width : 150px; height: 150px;"/>
-                            </a>
+                            <a data-bind="attr: { href : image_path, title : title }"  onclick="return false;"  class="group1" >
+                         
+                            <img  data-bind="attr : { src : '/' + image_path, alt : title }" style="width : 150px; height: 150px;" />
+                           </a>
                             <span data-bind="text : title">Мишки в лесу</span>
                             <span class="date" data-bind="text : created_date">26/05/11</span>
                             <a href="#" class="more_button">Подробнее</a>
