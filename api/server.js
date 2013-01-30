@@ -36,30 +36,23 @@ app.get('/api/konkurs/:id', function(req, res){
 
 app.get('/api/index', function(req, res){
   db.User.find({}, function(e, users){
-    var result = {
-        top_users : users,
-        top_images : [
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg",   
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg",
-            "img/small_img_3.jpg"     
-        ],
-        current_batle : {
-                    image_path : 'img/img_1.jpg',
-                    name : 'лучшй пейзаж'
-                },
-                winner :  {
-                    photo_path : 'img/img_2.jpg',
-                    photo_name : 'метрополитен',
-                    user_name : 'Иван Иваныч'
-                }
-    };
-    res.json(200, result);
+    db.Critic.find({}).limit(10).execFind(function(e, top_images){
+      console.log(top_images);
+      var result = {
+          top_users : users,
+          top_images : top_images,
+          current_batle : {
+                      image_path : 'img/img_1.jpg',
+                      name : 'лучшй пейзаж'
+                  },
+                  winner :  {
+                      photo_path : 'img/img_2.jpg',
+                      photo_name : 'метрополитен',
+                      user_name : 'Иван Иваныч'
+                  }
+      };
+      res.json(200, result);
+    });
   });
 });
 
